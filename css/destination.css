@@ -21,20 +21,32 @@ nav > a:hover {
     display: flex;
     align-items: center ;
     justify-content: space-around;
-    margin: 5%;
+    align-content: center;
+    height: 100%;
 }
 .block{
-    display: block;
+    display: inline-block;  
+         
+    padding: 10px 15px;          
+    background-color: rgba(255, 255, 255, 0.8); 
+    border: 2px solid #333;      
+    border-radius: 8px;                     
+    text-align: center;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2); 
+
 }
 
 
 .image-box {
-    width: 40vw;  
+    width: 45vw;  
     height: auto;
+
 }
 
 img {
     transition: transform 0.2s ease;
+    border: 2px solid #333;
+    border-width: 5px;
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
@@ -43,4 +55,16 @@ img {
 img:hover {
     transform: scale(1.05);
     box-shadow: 10px 10px 15px rgb(221, 146, 8);
+}
+
+body{
+  margin-bottom: 1cm;
+}
+#background-color-1{
+  background-color: aqua;
+  height: 350px;
+}
+#background-color-2{
+  background-color: rgb(61, 126, 47);
+  height: 350px;
 }
