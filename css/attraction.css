@@ -1,9 +1,6 @@
 nav {
   background-color: #4e4444;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 nav > a {
@@ -95,6 +92,57 @@ footer{
   color: #ffe6f2;
 }
 
+.attraction-section {
+  background-image: url('../images/attraction2.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 600px;
+  padding: 50px;
+  color: white;          /* lighter text works better on dark overlay */
+  position: relative;
+}
 
+/* semi-transparent overlay */
+.attraction-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);  /* change 0.4 to darker/lighter */
+  z-index: 0;
+}
 
+/* make sure your text sits above overlay */
+.attraction-section * {
+  position: relative;
+  z-index: 1;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+}
 
+.header {
+  font-size: 70px;  /* adjust heading size */
+  font-weight: bold; /* optional */
+}
+
+.paragraph {
+  font-size: 20px;  /* adjust paragraph size */
+  line-height: 1.6; /* makes text easier to read */
+}
+
+.content-left {
+  width: 50%;            /* content only takes 40% of the section */
+  padding: 50px;         /* space from top & sides */
+  float: left;           /* aligns content to the left */
+  text-align: left;      /* optional */
+}
+
+.info-label {
+  font-weight: bold;
+  font-size: 20px;
+}
