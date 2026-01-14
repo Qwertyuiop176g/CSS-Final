@@ -20,7 +20,7 @@ function createNavbar(targetId) {
     SGNavItem.appendChild(SGNavItemText);
 
     const homeNavItem = document.createElement("a");
-    homeNavItem.href = "destinations.html";
+    homeNavItem.href = "attraction.html";
     const homeNavItemText = document.createTextNode("Destinations");
     homeNavItem.appendChild(homeNavItemText);
 
