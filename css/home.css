@@ -1,0 +1,118 @@
+/* Make the page take full height/width */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: ArizonaFlareRegular;
+}
+
+/* Full-page background */
+.head {
+  background-image: url("../images/sg\ evening.jpg"); /* path to your image */
+  background-size: cover;       /* scale to cover all screen */
+  background-position: center;   /* center the image */
+  background-repeat: no-repeat;
+  height: 100vh;                 /* full viewport height */
+  width: 100%;
+  color: #fff;                   /* text color */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;       /* vertical center */
+  align-items: center;           /* horizontal center */
+}
+
+/* Text styles */
+.head h1 {
+  font-size: 4rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* horizontal, vertical, blur, color */
+}
+
+.head p {
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* slightly smaller shadow */
+}
+
+.split-section {
+  display: flex;                  /* side-by-side layout */
+  max-width: 1200px;              /* container max width */
+  margin: 50px auto;              /* center horizontally with margin */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* optional subtle shadow */
+  border-radius: 10px;            /* rounded corners */
+  overflow: hidden;               /* clip image corners */
+}
+
+.text-box {
+  flex: 1;                        /* take half of container */
+  background-color: #f7f7f2;      /* light background for text */
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;        /* vertically center text */
+}
+
+.text-box h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.text-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.text-box p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.image-box {
+  flex: 1;                        /* take other half */
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;               /* crop to fit box */
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;       /* optional */
+    padding-top: 56.25%;    /* 16:9 aspect ratio (height/width*100%) */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fills container, crops if needed */
+    display: block;
+}
+
+
+/* Fade animation */
+.fade {
+    animation: fade 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4;}
+    to {opacity: 1;}
+}
