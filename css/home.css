@@ -8,7 +8,7 @@ body {
 
 /* Full-page background */
 .head {
-  background-image: url("../images/sg\ evening.jpg"); /* path to your image */
+  background-image: url("sg_evening.jpg"); /* path to your image */
   background-size: cover;       /* scale to cover all screen */
   background-position: center;   /* center the image */
   background-repeat: no-repeat;
