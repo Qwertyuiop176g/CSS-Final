@@ -24,3 +24,16 @@ footer{
   background-color: rgb(120, 96, 96);
   color: #ffe6f2;
 }
+
+.navbar {
+  display: flex;
+  justify-content: center;  /* centers items horizontally */
+  align-items: center;      /* centers items vertically */
+  gap: 30px;                /* spacing between links */
+}
+.navbar a {
+  text-decoration: none;       /* remove underline */
+  color: #fff;                 /* text color */
+  font-weight: bold;
+  font-size: 16px;
+}
