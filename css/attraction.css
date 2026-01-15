@@ -1,25 +1,3 @@
-nav {
-  background-color: #4e4444;
-  display: flex;
-  justify-content: center;   /* centers horizontally */
-  align-items: center;        /* centers vertically */
-  gap: 25px;                  /* spacing between items */
-  padding: 10px 0;
-}
-
-nav > a {
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-nav > a:hover {
-  background-color: #ddd;
-  color: rgb(255, 0, 0);
-}
-
-
 body {
     cursor: url("../images/cursor.png"), auto;
 }

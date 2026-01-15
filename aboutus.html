@@ -1,27 +1,76 @@
 <!DOCTYPE html>
-    <head>
-        <title>
-            Hot Tourist Destinations
-        </title>
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
+<html>
+<head>
+    <title>About Us</title>
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
 
-    <body>
-        
-        <div id="nav-container"></div>
-        <h1>Destinations</h1>
+<body>
+    
+    <div id="nav-container"></div>
 
+    <div class="content-container">
+        <h1>About This Website</h1>
         
-        
-        <footer>
-            <div>
-                <p>Author: Group ?</p>
-                <p>Email: <a href="mailto:here@example.com">here@example.com</a></p>
-                <p>Credits:</p>
-                <a href="https://www.flaticon.com/free-icons/home" title="home icons">Home icons created by Dave Gandy - Flaticon</a>
-                <a href="https://www.freepik.com/icon/cursor_587335#fromView=family&page=1&position=3&uuid=7cf57952-11bf-492f-a90a-7c81bdc7b47e">Icon by Freepik</a>
-            </div>
-        </footer>
+        <div class="about-box">
+            <h2>Welcome! </h2>
+            <p>
+                This website was created to help tourists discover the best attractions in Singapore. 
+                As a beginner web developer, I wanted to build a simple and helpful guide for people 
+                planning their trip to Singapore.
+            </p>
+            <p>
+                Singapore is an amazing city with so much to see and do! I hope this website makes 
+                it easier for you to plan your visit and find fun places to explore.
+            </p>
+        </div>
 
-        <script src="/js/nav.js"></script>
-    </body>
+        <div class="about-box">
+            <h2>About Singapore</h2>
+            <p><strong>Location:</strong> Southeast Asia (island country)</p>
+            <p><strong>Languages:</strong> English, Mandarin, Malay, Tamil</p>
+            <p><strong>Currency:</strong> Singapore Dollar (SGD)</p>
+            <p><strong>Population:</strong> About 5.6 million people</p>
+            <p><strong>Size:</strong> Very small!  Only 734 square kilometers</p>
+            <p><strong>Fun Fact:</strong> Singapore is both a city AND a country!</p>
+        </div>
+
+        <div class="about-box">
+            <h2>What Makes Singapore Special? </h2>
+            <ul>
+                <li>Very clean and safe</li>
+                <li>Mix of modern and traditional</li>
+                <li>Amazing food from many cultures</li>
+                <li>Efficient public transport</li>
+                <li>English widely spoken</li>
+                <li>Beautiful gardens and parks</li>
+                <li>Strict rules (but that keeps it safe and clean!)</li>
+            </ul>
+        </div>
+
+        <div class="about-box">
+            <h2>Contact Us</h2>
+            <form class="contact-form">
+                <label for="name">Your Name:</label><br>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                
+                <label for="email">Your Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="message">Your Message:</label><br>
+                <textarea id="message" name="message" rows="5" placeholder="Ask questions or give feedback!" required></textarea>
+                
+                <br>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script src="js/Nav.js"></script>
+    <script src="js/Footer.js"></script>
+</body>
+</html>
