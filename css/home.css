@@ -218,29 +218,4 @@ a.btn-ghost {
   .text-box p { font-size: 15px; }
 }
 
-.footer-container {
-    display: flex;
-    justify-content: center;  /* centers both sections */
-    align-items: center;
-    gap: 300px;                /* controls how close they are */
-    padding: 15px 30px;
-}
 
-.footer-left p,
-.footer-right p {
-    margin: 5px 0;
-}
-
-.footer-right {
-    text-align: center;
-}
-footer a {
-    color: #ffffff;              /* any color you want */
-    text-decoration: none;
-}
-
-footer a:hover {
-  background-color: #a6c8ff;   /* soft sky-blue hover */
-  color: #1f3c88;
-  text-decoration: underline; /* optional */
-}
