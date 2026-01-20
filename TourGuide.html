@@ -2,155 +2,183 @@
 <html>
 <head>
     <title>Tour Guide</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/Tourguide.css">
     <link rel="stylesheet" href="css/Style.css">
 </head>
 
 <body>
-    <div class="glitter-bg"></div>
+    <div class="glitter-bg" aria-hidden="true"></div>
 
-    <div id="nav-container"></div>
 
-    <section class="attraction-section">
-        <div class="content-left">
-            <h2 class="header">Singapore Travel Guide</h2>
-            <p class="paragraph">
-                Planning your trip to Singapore? Here are some helpful tips and guides to make 
-                your visit amazing!  Learn about the best times to visit, how to get around, 
-                and money-saving tips.
-            </p>
-            <p class="paragraph">
-                Singapore is easy to explore, safe, and very tourist-friendly.  Most people speak 
-                English and the public transport is excellent! 
-            </p>
-        </div>
-    </section>
+    <a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to main content</a>
 
-    <div class="card card-blue">
-        <h2 class="card-title">Getting Around Singapore</h2>
-        <div class="flexside">
-            <img src="images/mrt.jpg" alt="MRT train">
+
+    <div id="nav-container" role="navigation" aria-label="Main navigation"></div>
+
+    <main id="main" role="main">
+        <section class="attraction-section" aria-labelledby="guide-heading">
+            <div class="content-left container">
+                <h2 id="guide-heading" class="header">Singapore Travel Guide</h2>
+                <p class="paragraph">
+                    Planning your trip to Singapore? Here are some helpful tips and guides to make 
+                    your visit amazing! Learn about the best times to visit, how to get around, 
+                    and money-saving tips.
+                </p>
+                <p class="paragraph">
+                    Singapore is easy to explore, safe, and very tourist-friendly. Most people speak 
+                    English and the public transport is excellent!
+                </p>
+
+                <div class="tools" aria-hidden="false">
+                    <a href="#" class="btn-placeholder" aria-disabled="true">Download printable guide (placeholder)</a>
+                </div>
+            </div>
+        </section>
+
+        <article class="card card-blue" aria-labelledby="getting-around">
+            <h2 id="getting-around" class="card-title">Getting Around Singapore</h2>
+            <div class="flexside">
+                <figure style="margin:0;">
+                    <img src="images/mrt.jpg" alt="MRT train" />
+                    <figcaption style="display:none;">MRT train in Singapore</figcaption>
+                </figure>
+
+                <div class="card-content">
+                    <p><span class="info-label">Best Way to Travel: MRT (Mass Rapid Transit)</span></p>
+                    <p>
+                        The MRT is Singapore's train system. It's fast, cheap, and air-conditioned! 
+                        You can go almost anywhere in Singapore using the MRT. Trains run from 5:30 AM 
+                        to midnight.
+                    </p>
+                    <p>
+                        Buy an EZ-Link card or Singapore Tourist Pass at any MRT station. The Tourist Pass 
+                        gives you unlimited rides for 1, 2, or 3 days! Regular fares cost $1-2 per trip.
+                    </p>
+                    <p>
+                        Buses are also good but more confusing. Taxis and Grab (like Uber) are available 
+                        but more expensive. Walking is nice too — Singapore is very safe!
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <article class="card card-red" aria-labelledby="best-time">
+            <h2 id="best-time" class="card-title">Best Time to Visit</h2>
+            <div class="flexside">
+                <figure style="margin:0;">
+                    <img src="images/sunny.png" alt="Singapore weather" />
+                    <figcaption style="display:none;">Sun icon for weather</figcaption>
+                </figure>
+
+                <div class="card-content">
+                    <p><span class="info-label">Weather: Hot and humid all year!</span></p>
+                    <p>
+                        Singapore has tropical weather. It's always hot (25-32°C / 77-90°F) and humid. 
+                        There is no winter or summer — just wet season and dry season.
+                    </p>
+                    <p>
+                        <strong>Dry Season (February to April):</strong> Less rain, good for outdoor activities.   
+                        This is peak tourist season so it's more crowded.
+                    </p>
+                    <p>
+                        <strong>Wet Season (November to January):</strong> More rain but usually just short 
+                        showers. Cheaper hotels and fewer tourists! Bring an umbrella.
+                    </p>
+                    <p>Pro tip: Always bring sunscreen, water, and an umbrella no matter when you visit!</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="card card-yellow" aria-labelledby="money-tips">
+            <h2 id="money-tips" class="card-title">Money-Saving Tips</h2>
+            <div class="flexside">
+                <figure style="margin:0;">
+                    <img src="images/money.jpg" alt="Singapore dollar" />
+                    <figcaption style="display:none;">Singapore dollar banknotes</figcaption>
+                </figure>
+
+                <div class="card-content">
+                    <p><span class="info-label">Currency: Singapore Dollar (SGD or S$)</span></p>
+                    <p>Singapore can be expensive, but there are many FREE things to do! Here's how to save money:</p>
+                    <p><strong>Free Attractions:</strong> Gardens by the Bay (outdoor), Merlion Park, Chinatown, 
+                        Little India, walking along Marina Bay, and all beaches are FREE!
+                    </p>
+                    <p><strong>Cheap Food:</strong> Eat at hawker centres (food courts). Meals cost $3-5 instead 
+                        of $15-30 at restaurants. Try Maxwell Food Centre, Lau Pa Sat, or Chinatown Complex.
+                    </p>
+                    <p><strong>Tourist Passes:</strong> Buy combination tickets for multiple attractions to save money.  
+                        Use the Tourist Pass for unlimited MRT rides.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <article class="card card-green" aria-labelledby="itineraries">
+            <h2 id="itineraries" class="card-title">Sample Itineraries</h2>
             <div class="card-content">
-                <p><span class="info-label">Best Way to Travel: MRT (Mass Rapid Transit)</span></p>
+                <p><span class="info-label">1-Day Trip:</span></p>
                 <p>
-                    The MRT is Singapore's train system.  It's fast, cheap, and air-conditioned! 
-                    You can go almost anywhere in Singapore using the MRT.  Trains run from 5:30 AM 
-                    to midnight. 
+                    Morning: Visit Merlion Park and walk around Marina Bay<br>
+                    Lunch: Eat at a hawker centre<br>
+                    Afternoon: Gardens by the Bay<br>
+                    Evening: Watch the light show at Gardens by the Bay (7:45 PM or 8:45 PM)
                 </p>
+
+                <p><span class="info-label">3-Day Trip:</span></p>
                 <p>
-                    Buy an EZ-Link card or Singapore Tourist Pass at any MRT station.  The Tourist Pass 
-                    gives you unlimited rides for 1, 2, or 3 days!  Regular fares cost $1-2 per trip.
+                    Day 1: Marina Bay area (Merlion, Marina Bay Sands, Gardens by the Bay)<br>
+                    Day 2: Sentosa Island (beaches and attractions)<br>
+                    Day 3: Cultural areas (Chinatown, Little India, Arab Street) + Singapore Zoo
                 </p>
+
+                <p><span class="info-label">5-Day Trip:</span></p>
                 <p>
-                    Buses are also good but more confusing.  Taxis and Grab (like Uber) are available 
-                    but more expensive. Walking is nice too - Singapore is very safe!
+                    Add: Singapore Flyer, Orchard Road shopping, Night Safari, River Safari, 
+                    Jurong Bird Park, and more food adventures!
                 </p>
             </div>
-        </div>
-    </div>
+        </article>
 
-    <div class="card card-red">
-        <h2 class="card-title">Best Time to Visit</h2>
-        <div class="flexside">
-            <img src="images/sunny.png" alt="Singapore weather">
+        <article class="card card-grey" aria-labelledby="rules">
+            <h2 id="rules" class="card-title">Important Rules & Tips</h2>
             <div class="card-content">
-                <p><span class="info-label">Weather: Hot and humid all year! </span></p>
-                <p>
-                    Singapore has tropical weather.  It's always hot (25-32°C / 77-90°F) and humid. 
-                    There is no winter or summer - just wet season and dry season. 
-                </p>
-                <p>
-                    <strong>Dry Season (February to April):</strong> Less rain, good for outdoor activities.   
-                    This is peak tourist season so it's more crowded. 
-                </p>
-                <p>
-                    <strong>Wet Season (November to January):</strong> More rain but usually just short 
-                    showers.  Cheaper hotels and fewer tourists!  Bring an umbrella. 
-                </p>
-                <p>
-                    Pro tip: Always bring sunscreen, water, and an umbrella no matter when you visit!
-                </p>
+                <p>Singapore has strict rules. Follow them or you might get fined!</p>
+
+                <h3 style="margin-bottom:6px;">Common Prohibitions</h3>
+                <ul>
+                    <li>No chewing gum (it's illegal to bring it in!)</li>
+                    <li>No smoking except in designated areas</li>
+                    <li>No littering (fine: $300–1000)</li>
+                    <li>No jaywalking (cross at traffic lights only)</li>
+                    <li>No eating/drinking on MRT (fine: $500)</li>
+                </ul>
+
+                <h3 style="margin-bottom:6px;">Useful Tips</h3>
+                <ul>
+                    <li>Tap water is safe to drink</li>
+                    <li>Tipping is not expected</li>
+                    <li>English is widely spoken</li>
+                    <li>Very safe city — you can walk around at night</li>
+                    <li>Free Wi‑Fi available at many places (Wireless@SGx)</li>
+                </ul>
             </div>
-        </div>
-    </div>
+        </article>
 
-    <div class="card card-yellow">
-        <h2 class="card-title">Money-Saving Tips</h2>
-        <div class="flexside">
-            <img src="images/money.jpg" alt="Singapore dollar">
-            <div class="card-content">
-                <p><span class="info-label">Currency: Singapore Dollar (SGD or S$)</span></p>
-                <p>
-                    Singapore can be expensive, but there are many FREE things to do! Here's how to save money:
-                </p>
-                <p>
-                    <strong>Free Attractions:</strong> Gardens by the Bay (outdoor), Merlion Park, Chinatown, 
-                    Little India, walking along Marina Bay, and all beaches are FREE!
-                </p>
-                <p>
-                    <strong>Cheap Food:</strong> Eat at hawker centres (food courts). Meals cost $3-5 instead 
-                    of $15-30 at restaurants. Try Maxwell Food Centre, Lau Pa Sat, or Chinatown Complex.
-                </p>
-                <p>
-                    <strong>Tourist Passes:</strong> Buy combination tickets for multiple attractions to save money.  
-                    Use the Tourist Pass for unlimited MRT rides. 
-                </p>
+        <button id="backToTop" aria-label="Back to top" title="Back to top" style="display:none;">↑</button>
+
+        <section id="related-placeholder" style="max-width:1200px;margin:18px auto;padding:0 16px;">
+            <div style="background:#fff;border-radius:10px;padding:18px;border:1px dashed #ddd;color:#666;">
+                Related guides / partner offers (placeholder)
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
-    <div class="card card-green">
-        <h2 class="card-title">Sample Itineraries</h2>
-        <div class="card-content">
-            <p><span class="info-label">1-Day Trip:</span></p>
-            <p>
-                Morning: Visit Merlion Park and walk around Marina Bay<br>
-                Lunch:  Eat at a hawker centre<br>
-                Afternoon: Gardens by the Bay<br>
-                Evening: Watch the light show at Gardens by the Bay (7:45 PM or 8:45 PM)
-            </p>
-            <br>
-            <p><span class="info-label">3-Day Trip:</span></p>
-            <p>
-                Day 1: Marina Bay area (Merlion, Marina Bay Sands, Gardens by the Bay)<br>
-                Day 2: Sentosa Island (beaches and attractions)<br>
-                Day 3: Cultural areas (Chinatown, Little India, Arab Street) + Singapore Zoo
-            </p>
-            <br>
-            <p><span class="info-label">5-Day Trip:</span></p>
-            <p>
-                Add:  Singapore Flyer, Orchard Road shopping, Night Safari, River Safari, 
-                Jurong Bird Park, and more food adventures! 
-            </p>
-        </div>
-    </div>
-
-    <div class="card card-grey">
-        <h2 class="card-title">Important Rules & Tips</h2>
-        <div class="card-content">
-            <p>
-                Singapore has strict rules. Follow them or you might get fined! 
-            </p>
-            <p>
-                ❌ <strong>No chewing gum</strong> (it's illegal to bring it in! )<br>
-                ❌ <strong>No smoking</strong> except in designated areas<br>
-                ❌ <strong>No littering</strong> (fine:  $300-1000)<br>
-                ❌ <strong>No jaywalking</strong> (cross at traffic lights only)<br>
-                ❌ <strong>No eating/drinking on MRT</strong> (fine: $500)
-            </p>
-            <p>
-                ✅ <strong>Tap water is safe to drink</strong><br>
-                ✅ <strong>Tipping is not expected</strong><br>
-                ✅ <strong>English is widely spoken</strong><br>
-                ✅ <strong>Very safe city</strong> - you can walk around at night<br>
-                ✅ <strong>Free Wi-Fi</strong> available at many places (Wireless@SG)
-            </p>
-        </div>
-    </div>
-
-    <div id="footer-container"></div>
-
+    <div id="footer-container" role="contentinfo"></div>
     <script src="js/Nav.js"></script>
     <script src="js/Footer.js"></script>
+    <script src="js/backToTop.js" defer></script>
+
 </body>
 </html>
