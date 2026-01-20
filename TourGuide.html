@@ -41,7 +41,7 @@
             <h2 id="getting-around" class="card-title">Getting Around Singapore</h2>
             <div class="flexside">
                 <figure style="margin:0;">
-                    <img src="images/mrt.jpg" alt="MRT train" />
+                    <img src="images/mrt.jpg" alt="MRT train" height="200px" width="600px" />
                     <figcaption style="display:none;">MRT train in Singapore</figcaption>
                 </figure>
 
@@ -86,6 +86,7 @@
                         <strong>Wet Season (November to January):</strong> More rain but usually just short 
                         showers. Cheaper hotels and fewer tourists! Bring an umbrella.
                     </p>
+                    <br>
                     <p>Pro tip: Always bring sunscreen, water, and an umbrella no matter when you visit!</p>
                 </div>
             </div>
@@ -117,52 +118,70 @@
 
         <article class="card card-green" aria-labelledby="itineraries">
             <h2 id="itineraries" class="card-title">Sample Itineraries</h2>
-            <div class="card-content">
-                <p><span class="info-label">1-Day Trip:</span></p>
-                <p>
-                    Morning: Visit Merlion Park and walk around Marina Bay<br>
-                    Lunch: Eat at a hawker centre<br>
-                    Afternoon: Gardens by the Bay<br>
-                    Evening: Watch the light show at Gardens by the Bay (7:45 PM or 8:45 PM)
-                </p>
 
-                <p><span class="info-label">3-Day Trip:</span></p>
-                <p>
-                    Day 1: Marina Bay area (Merlion, Marina Bay Sands, Gardens by the Bay)<br>
-                    Day 2: Sentosa Island (beaches and attractions)<br>
-                    Day 3: Cultural areas (Chinatown, Little India, Arab Street) + Singapore Zoo
-                </p>
+            <div class="trips-grid">
 
-                <p><span class="info-label">5-Day Trip:</span></p>
-                <p>
-                    Add: Singapore Flyer, Orchard Road shopping, Night Safari, River Safari, 
-                    Jurong Bird Park, and more food adventures!
-                </p>
+                <div class="trip-box">
+                    <p><span class="info-label">1-Day Trip:</span></p>
+                    <p>
+                        Morning: Visit Merlion Park and walk around Marina Bay<br>
+                        Lunch: Eat at a hawker centre<br>
+                        Afternoon: Gardens by the Bay<br>
+                        Evening: Watch the light show at Gardens by the Bay (7:45 PM or 8:45 PM)
+                    </p>
+                </div>
+
+                <div class="trip-box">
+                    <p><span class="info-label">3-Day Trip:</span></p>
+                    <p>
+                        Day 1: Marina Bay area (Merlion, Marina Bay Sands, Gardens by the Bay)<br>
+                        Day 2: Sentosa Island (beaches and attractions)<br>
+                        Day 3: Cultural areas (Chinatown, Little India, Arab Street) + Singapore Zoo
+                    </p>
+                </div>
+
+                <div class="trip-box">
+                    <p><span class="info-label">5-Day Trip:</span></p>
+                    <p>
+                        Add: Singapore Flyer, Orchard Road shopping, Night Safari, River Safari, 
+                        Jurong Bird Park, and more food adventures!
+                    </p>
+                </div>
+
             </div>
         </article>
 
         <article class="card card-grey" aria-labelledby="rules">
             <h2 id="rules" class="card-title">Important Rules & Tips</h2>
+
             <div class="card-content">
                 <p>Singapore has strict rules. Follow them or you might get fined!</p>
 
-                <h3 style="margin-bottom:6px;">Common Prohibitions</h3>
-                <ul>
-                    <li>No chewing gum (it's illegal to bring it in!)</li>
-                    <li>No smoking except in designated areas</li>
-                    <li>No littering (fine: $300–1000)</li>
-                    <li>No jaywalking (cross at traffic lights only)</li>
-                    <li>No eating/drinking on MRT (fine: $500)</li>
-                </ul>
+                <div class="rules-grid">
+                    <!-- NO side -->
+                    <section class="rules-column no">
+                        <h3>❌ Common Prohibitions</h3>
+                        <ul>
+                            <li>No chewing gum (it's illegal to bring it in!)</li>
+                            <li>No smoking except in designated areas</li>
+                            <li>No littering (fine: $300–1000)</li>
+                            <li>No jaywalking (cross at traffic lights only)</li>
+                            <li>No eating/drinking on MRT (fine: $500)</li>
+                        </ul>
+                    </section>
 
-                <h3 style="margin-bottom:6px;">Useful Tips</h3>
-                <ul>
-                    <li>Tap water is safe to drink</li>
-                    <li>Tipping is not expected</li>
-                    <li>English is widely spoken</li>
-                    <li>Very safe city — you can walk around at night</li>
-                    <li>Free Wi‑Fi available at many places (Wireless@SGx)</li>
-                </ul>
+                    <!-- YES side -->
+                    <section class="rules-column yes">
+                        <h3>✅ Useful Tips</h3>
+                        <ul>
+                            <li>Tap water is safe to drink</li>
+                            <li>Tipping is not expected</li>
+                            <li>English is widely spoken</li>
+                            <li>Very safe city — you can walk around at night</li>
+                            <li>Free Wi-Fi available at many places (Wireless@SGx)</li>
+                        </ul>
+                    </section>
+                </div>
             </div>
         </article>
 
@@ -175,27 +194,7 @@
         </section>
     </main>
 
-<footer>
-    <div class="footer-container">
-        <div class="footer-left">
-            <h3>Author: Group 4</h3>
-            <h3>Email: <a href="mailto:here@example.com">here@example.com</a></h3>
-            <h3>
-                Credits:
-                <a href="https://www.flaticon.com/free-icons/home" title="home icons">
-                    Home icons created by Dave Gandy - Flaticon
-                </a>
-            </h3>
-        </div>
-
-        <div class="footer-right">
-            <h3><a href="AboutSG.html">About Singapore</a></h3>
-            <h3><a href="attraction.html">Attraction</a></h3>
-            <h3><a href="TourGuides.html">Tour Guides</a></h3>
-            <h3><a href="aboutus.html">About Us</a></h3>
-        </div>
-    </div>
-</footer>
+    <div id="footer-container" role="contentinfo"></div>
     <script src="js/Nav.js"></script>
     <script src="js/Footer.js"></script>
     <script src="js/backToTop.js" defer></script>
