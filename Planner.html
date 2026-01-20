@@ -4,32 +4,62 @@
             Hot Tourist Destinations
         </title>
         <link rel="stylesheet" href="css/Style.css">
+        <link rel="stylesheet" href="css/planner.css">
     </head>
 
     <body>
-        
-<footer>
-    <div class="footer-container">
-        <div class="footer-left">
-            <h3>Author: Group 4</h3>
-            <h3>Email: <a href="mailto:here@example.com">here@example.com</a></h3>
-            <h3>
-                Credits:
-                <a href="https://www.flaticon.com/free-icons/home" title="home icons">
-                    Home icons created by Dave Gandy - Flaticon
-                </a>
-            </h3>
+    <div id="nav-container"></div>
+
+    <section class="custom-itinerary" id="custom-itinerary">
+        <h2>Create Your Own Singapore Trip</h2>
+  
+        <div class="planner-inputs">
+            <div>
+                <label for="num-days">Number of Days:</label>
+                <input type="number" id="num-days" min="1" max="7" value="1">
+            </div>
+
+            <div>
+                <label>Select Attractions:</label>
+                <div class="attraction-buttons">
+                    <button type="button" class="attraction-btn">Marina Bay Sands</button>
+                    <button type="button" class="attraction-btn">Gardens by the Bay</button>
+                    <button type="button" class="attraction-btn">Sentosa Island</button>
+                    <button type="button" class="attraction-btn">Merlion Park</button>
+                    <button type="button" class="attraction-btn">Singapore Zoo</button>
+                    <button type="button" class="attraction-btn">Chinatown</button>
+                    <button type="button" class="attraction-btn">Little India</button>
+                    <button type="button" class="attraction-btn">Orchard Road</button>
+            </div>
         </div>
 
-        <div class="footer-right">
-            <h3><a href="AboutSG.html">About Singapore</a></h3>
-            <h3><a href="attraction.html">Attraction</a></h3>
-            <h3><a href="TourGuides.html">Tour Guides</a></h3>
-            <h3><a href="aboutus.html">About Us</a></h3>
-        </div>
-    </div>
-</footer>
+            <button id="generate-plan">Generate My Plan</button>
+            <div id="user-plan" class="plan-output"></div>
+    </section>
 
-    <script src="js/Nav.js"></script>
-    <script src="js/Footer.js"></script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>Author: Group 4</h3>
+                <h3>Email: <a href="mailto:here@example.com">here@example.com</a></h3>
+                <h3>
+                    Credits:
+                    <a href="https://www.flaticon.com/free-icons/home" title="home icons">
+                        Home icons created by Dave Gandy - Flaticon
+                    </a>
+                </h3>
+            </div>
+
+            <div class="footer-right">
+                <h3><a href="AboutSG.html">About Singapore</a></h3>
+                <h3><a href="attraction.html">Attraction</a></h3>
+                <h3><a href="TourGuides.html">Tour Guides</a></h3>
+                <h3><a href="aboutus.html">About Us</a></h3>
+            </div>
+        </div>
+    </footer>       
+        <script src="js/planner.js"></script>
+        <script src="js/Nav.js"></script>
+        <script src="js/Footer.js"></script>
     </body>
+</html>
