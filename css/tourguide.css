@@ -96,8 +96,8 @@ html, body {
 
 
 .flexside img {
-    width: 45%;
-    max-width: 450px;
+    width: 100%;
+    max-width: 600px;
     border-radius: 12px;
     object-fit: cover;
     display: block;
@@ -105,19 +105,21 @@ html, body {
 }
 
 .card-content {
-    width: 55%;
-    font-size: clamp(.95rem, 1.2vw, 1rem);
+    display: flex;
+    flex-direction: column;
 }
 
 
 .info-label {
     font-weight: bold;
-    display: inline-block;
-    margin-bottom: .35rem;
-    font-size: .98rem;
+    font-size: 1.125rem;
     color: var(--muted);
-}
 
+    display: flex;             /* flex container */
+    justify-content: center;   /* horizontal center */
+    align-items: center;       /* vertical center */
+    margin-bottom: 0.35rem;
+}
 
 .glitter-bg {
     position: fixed;
@@ -211,6 +213,73 @@ html, body {
     .paragraph, .card-content { font-size: 1rem; }
     .card { margin: 0.8rem .6rem; padding: .6rem; }
     .card-title { font-size: 1.05rem; }
+}
+
+
+a:focus, button:focus, #backToTop:focus { 
+    outline: 3px solid rgba(179,0,71,0.18); 
+    outline-offset: 3px; 
+}
+
+
+.trips-grid {
+    display: flex;              /* arrange boxes horizontally */
+    justify-content: center;    /* center them horizontally */
+    gap: 20px;                  /* space between boxes */
+    flex-wrap: wrap;            /* wrap on small screens */
+    margin-top: 20px;
+}
+
+.trip-box {
+    background: #e0ffe0;        /* light green for visibility */
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 2px solid #006600;  /* matches card-green */
+    max-width: 350px;            /* controls box width */
+    text-align: left;
+    flex: 1 1 250px;             /* flexible but min 250px */
+}
+
+/* Grey card rules section (centered NO/YES boxes) */
+.card-grey .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* center children horizontally */
+}
+
+.card-grey .rules-grid {
+    display: flex;              /* arrange columns side by side */
+    justify-content: center;    /* center the whole row */
+    gap: 40px;                  /* space between boxes */
+    flex-wrap: wrap;            /* wrap on smaller screens */
+    margin-top: 15px;
+}
+
+.card-grey .rules-column {
+    flex: 0 0 400px;            /* fixed width, can shrink */
+    max-width: 100%;            /* prevents overflow on mobile */
+    background: #f6f6f6;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.card-grey .rules-column h3 {
+    margin-bottom: 8px;
+}
+
+.card-grey .rules-column ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.rules-column.no {
+    border-left: 4px solid #e74c3c;
+}
+
+.rules-column.yes {
+    border-left: 4px solid #2ecc71;
+}
 }
 
 
