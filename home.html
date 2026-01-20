@@ -1,58 +1,85 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Singapore Attractions</title>
-        <link rel="stylesheet" href="css/Style.css">
-        <link rel="stylesheet" href="css/Home.css">
-    </head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Singapore Attractions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/Style.css">
+    <link rel="stylesheet" href="css/Home.css">
+  </head>
 
-    <body>
-        
-        <div id="nav-container"></div>
+  <body>
+    <div id="nav-container" role="navigation" aria-label="Main navigation"></div>
 
-        <div class="head">
-            <h1>Singapore Attractions</h1>
-            <p>Explore iconic attractions, culture, and rich experiences. </p>
+    <header class="head" role="banner">
+      <div class="head-inner">
+        <h1>Singapore Attractions</h1>
+        <p class="subhead">Explore iconic attractions, culture, and rich experiences.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="attractions.html">Explore Attractions</a>
+          <a class="btn-ghost" href="#main">Top Picks</a>
         </div>
-<br>
-        <div class="split-section">
-            <div class="text-box">
-                <h2>WELCOME TO SINGAPORE</h2>
-                <p>
-                    Singapore is a vibrant island city-state known for its stunning modern architecture, 
-                    diverse culture, and incredible attractions. From Marina Bay Sands to Gardens by the Bay, 
-                    there's something for everyone to enjoy! 
-                </p>
-                <p>
-                    This website will help you discover the best places to visit in Singapore, including 
-                    theme parks, cultural landmarks, nature spots, and more. 
-                </p>
+      </div>
+    </header>
+
+    <main id="main" role="main">
+      <section class="intro split-section" aria-labelledby="welcome-title">
+        <div class="text-box" id="welcome">
+          <h2 id="welcome-title">Welcome to Singapore</h2>
+          <p>
+            Singapore is a vibrant island city-state known for its stunning modern architecture, diverse culture, and incredible attractions. From Marina Bay Sands to Gardens by the Bay, there's something for everyone to enjoy.
+          </p>
+          <p>
+            This website will help you discover the best places to visit in Singapore, including theme parks, cultural landmarks, nature spots, and more.
+          </p>
         </div>
+
+        <div class="image-box" aria-hidden="false">
+          <img src="images/mbs.jpg" alt="Marina Bay Sands at dusk" />
+        </div>
+      </section>
+
+      <section id="top-attractions" class="split-section reverse">
         <div class="image-box">
-            <img src="images/mbs.jpg" alt="Marina Bay">
+          <img src="images/mbs_garden.jpg" alt="Gardens by the Bay - Supertrees" />
         </div>
+
+        <div class="text-box">
+          <h3>Top Attractions Await You</h3>
+          <p>
+            Discover famous spots like Marina Bay Sands with its rooftop pool, Gardens by the Bay with giant Supertrees, fun-filled Sentosa Island, and the iconic Merlion statue. Singapore offers a perfect mix of nature, culture, and entertainment.
+          </p>
+          <p>
+            Use the Explore button above to see the full list of attractions, or jump straight to our curated guides for families, couples, and solo travelers.
+          </p>
         </div>
+      </section>
 
- <br>      
+      <section class="feature-grid" aria-label="Preview of attractions">
+        <article class="feature-card">
+          <img src="images/merlion.jpg" alt="Merlion statue" />
+          <h4>Merlion Park</h4>
+          <p>Iconic waterfront statue and a great photo spot for sunset views.</p>
+        </article>
 
-        <div class="split-section">
-            <div class="image-box">
-                <img src="images/mbs_garden.jpg" alt="Gardens by the Bay">
-            </div>
+        <article class="feature-card">
+          <img src="images/sentosa.jpg" alt="Sentosa Island beach" />
+          <h4>Sentosa Island</h4>
+          <p>Beaches, Universal Studios, and family activities — perfect for a full-day visit.</p>
+        </article>
 
-            <div class="text-box">
-            <h3>Top Attractions Await You</h3>
-            <p> 
-                Discover famous spots like Marina Bay Sands with its rooftop pool, Gardens by the Bay 
-                with giant Supertrees, fun-filled Sentosa Island, and the iconic Merlion statue.  
-                Singapore offers a perfect mix of nature, culture, and entertainment! 
-            </p>
-            </div>
-        </div>   
+        <article class="feature-card">
+          <img src="images/chinatown.jpg" alt="Chinatown street and shophouses" />
+          <h4>Chinatown</h4>
+          <p>Colorful streets, food markets and historic temples — great for exploring.</p>
+        </article>
+      </section>
+    </main>
 
     <div id="footer-container"></div>
 
     <script src="js/Nav.js"></script>
     <script src="js/Footer.js"></script>
-    </body>
+  </body>
 </html>

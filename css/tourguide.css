@@ -1,3 +1,15 @@
+:root{
+  --page-bg: #fafafa;
+  --accent: #b30047;
+  --muted: #666;
+  --card-radius: 15px;
+  --card-border-width: 3px;
+  --max-width: 1200px;
+  --gutter: 1.25rem;
+  --type-scale: 1;
+}
+
+
 * {
     box-sizing: border-box;
 }
@@ -6,9 +18,12 @@ html, body {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #fafafa;
-    line-height: 1.6;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--page-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
 }
 
 
@@ -23,41 +38,47 @@ html, body {
     background: linear-gradient(to right, #e3f2fd, #f0f8ff);
     display: flex;
     align-items: center;
-    padding: 60px 20px;
+    padding: clamp(2.5rem, 6vw, 6rem) 0;
 }
 
 .content-left {
     max-width: 1100px;
     margin: auto;
+    padding: 0 clamp(.75rem, 2vw, 1.5rem);
 }
 
 .header {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+    margin-bottom: 1rem;
+    line-height: 1.08;
 }
 
 .paragraph {
-    font-size: 1.05rem;
+    font-size: clamp(1rem, 1.6vw, 1.05rem);
     max-width: 900px;
-    margin-bottom: 15px;
+    margin-bottom: 0.9rem;
+    color: #333;
 }
 
 
 .card {
     width: 100%;
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 30px;
-    border-radius: 15px;
-    border: 3px solid;
+    max-width: var(--max-width);
+    margin: clamp(1.25rem, 3vw, 3rem) auto;
+    padding: clamp(1rem, 2.2vw, 2rem);
+    border-radius: var(--card-radius);
+    border: var(--card-border-width) solid currentColor;
+    background-clip: padding-box;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 8px 20px rgba(21,21,21,0.06);
 }
 
 
 .card-title {
     text-align: center;
-    margin-bottom: 25px;
-    font-size: 2rem;
-    color: #b30047;
+    margin-bottom: 1rem;
+    font-size: clamp(1.25rem, 2.2vw, 2rem);
+    color: var(--accent);
 }
 
 .card-blue { background-color: #cce5ff; border-color: #003366; }
@@ -68,8 +89,9 @@ html, body {
 
 .flexside {
     display: flex;
-    gap: 30px;
+    gap: clamp(.75rem, 2vw, 1.5rem);
     align-items: center;
+    flex-wrap: nowrap;
 }
 
 
@@ -78,36 +100,23 @@ html, body {
     max-width: 450px;
     border-radius: 12px;
     object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease, filter 0.35s ease;
 }
 
 .card-content {
     width: 55%;
-    font-size: 1rem;
+    font-size: clamp(.95rem, 1.2vw, 1rem);
 }
 
 
 .info-label {
     font-weight: bold;
+    display: inline-block;
+    margin-bottom: .35rem;
+    font-size: .98rem;
+    color: var(--muted);
 }
-
-footer {
-    width: 100%;
-    background-color: #222;
-    color: #fff;
-    padding: 30px 15px;
-    text-align: center;
-}
-
-footer a {
-    color: #ffcccc;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-
 
 
 .glitter-bg {
@@ -122,6 +131,7 @@ footer a:hover {
     background-size: 40px 40px, 100% 100%;
     animation: sparkle 3s infinite linear;
     z-index: -1;
+    pointer-events: none; 
 }
 
 @keyframes sparkle {
@@ -132,7 +142,6 @@ footer a:hover {
         background-position: 40px 40px, 0 0;
     }
 }
-
 
 #backToTop {
     position: fixed;
@@ -152,77 +161,57 @@ footer a:hover {
 }
 
 #backToTop:hover {
-    transform: scale(1.15);
+    transform: scale(1.08);
 }
 
 
-
-
-/* All hover effects */
-.card {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+@media (max-width: 1100px) {
+  .flexside img { width: 48%; }
+  .card-content { width: 52%; }
 }
-.card:hover {
-    transform: translateY(-8px) scale(1.01);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-}
-.flexside img {
-    transition: transform 0.4s ease, filter 0.4s ease;
-}
-.card:hover img {
-    transform: scale(1.05);
-    filter: brightness(1.05);
-}
-a {
-    transition: color 0.3s ease;
-}
-a:hover {
-    color: #ff0066;
-}
-
-
-
 
 
 @media (max-width: 900px) {
-    .header {
-        font-size: 2rem;
-    }
-
-    .card-title {
-        font-size: 1.7rem;
-    }
+    .attraction-section { padding: clamp(2rem, 6vw, 4rem) 0; }
+    .header { font-size: clamp(1.5rem, 4.5vw, 2rem); }
+    .card { margin: 1.25rem clamp(.75rem, 3vw, 1.25rem); padding: clamp(.85rem, 2.2vw, 1.25rem); }
 
     .flexside {
         flex-direction: column;
+        align-items: stretch;
     }
 
     .flexside img {
         width: 100%;
         max-width: none;
+        height: auto;
     }
 
-    .card-content {
-        width: 100%;
-    }
+    .card-content { width: 100%; margin-top: .5rem; }
+    .content-left { padding: 0 clamp(.75rem, 2vw, 1rem); }
 
-    .card {
-        margin: 30px 15px;
-        padding: 20px;
+    .card:nth-child(even) .flexside {
+    flex-direction: column-reverse;
     }
 }
 
-@media (max-width: 480px) {
-    .header {
-        font-size: 1.8rem;
-    }
 
-    .paragraph,
-    .card-content {
-        font-size: 0.95rem;
-    }
 
-    footer {
-        font-size: 0.9rem;
-    }
+@media (max-width: 600px) {
+    .header { font-size: clamp(1.25rem, 5.6vw, 1.8rem); }
+    .paragraph, .card-content { font-size: 1.02rem; }
+    .card { padding: clamp(.6rem, 2.4vw, .9rem); border-radius: 12px; }
+    .glitter-bg { background-size: 28px 28px, 100% 100%; }
+    #backToTop { padding: 12px; font-size: 16px; bottom: 18px; right: 18px; }
 }
+
+
+@media (max-width: 380px) {
+    .header { font-size: 1.6rem; }
+    .paragraph, .card-content { font-size: 1rem; }
+    .card { margin: 0.8rem .6rem; padding: .6rem; }
+    .card-title { font-size: 1.05rem; }
+}
+
+
+a:focus, button:focus, #backToTop:focus { outline: 3px solid rgba(179,0,71,0.18); outline-offset: 3px; }
