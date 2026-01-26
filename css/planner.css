@@ -122,13 +122,6 @@ main {
     flex: 1;                    /* grow to fill vertical space before footer */
 }
 
-/* Footer styling */
-#footer-container {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 15px 10px;
-}
 
 /* Optional: keep footer visible at bottom on very short pages */
 footer, #footer-container {

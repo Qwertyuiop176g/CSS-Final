@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>About Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/About.css">
     <link rel="stylesheet" href="css/Style.css">
     
@@ -14,20 +15,20 @@
     <div class="content-container">
         <h1>About This Website</h1>
         
-        <div class="about-box">
+        <div class="about-box" aria-labelledby="welcome-heading">
             <h2>Welcome! </h2>
             <p>
                 This website was created to help tourists discover the best attractions in Singapore. 
-                As a beginner web developer, I wanted to build a simple and helpful guide for people 
+                As a beginner web developer, we wanted to build a simple and helpful guide for people 
                 planning their trip to Singapore.
             </p>
             <p>
-                Singapore is an amazing city with so much to see and do! I hope this website makes 
+                Singapore is an amazing city with so much to see and do! we hope this website makes 
                 it easier for you to plan your visit and find fun places to explore.
             </p>
         </div>
 
-        <div class="about-box">
+        <div class="about-box" aria-labelledby="about-singapore-heading">
             <h2>About Singapore</h2>
             <p><strong>Location:</strong> Southeast Asia (island country)</p>
             <p><strong>Languages:</strong> English, Mandarin, Malay, Tamil</p>
@@ -37,7 +38,7 @@
             <p><strong>Fun Fact:</strong> Singapore is both a city AND a country!</p>
         </div>
 
-        <div class="about-box">
+        <div class="about-box" aria-labelledby="contact-heading">
             <h2>What Makes Singapore Special? </h2>
             <ul>
                 <li>Very clean and safe</li>
@@ -52,7 +53,7 @@
 
         <div class="about-box">
             <h2>Contact Us</h2>
-            <form class="contact-form">
+            <form class="contact-form" aria-label="Contact form">
                 <label for="name">Your Name:</label><br>
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 
@@ -71,5 +72,6 @@
     <div id="footer-container" role="contentinfo"></div>
     <script src="js/Nav.js"></script>
     <script src="js/Footer.js"></script>
+    <script src="js/backToTop.js" defer></script>
 </body>
 </html>

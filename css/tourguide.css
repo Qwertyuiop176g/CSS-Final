@@ -280,7 +280,7 @@ a:focus, button:focus, #backToTop:focus {
 .rules-column.yes {
     border-left: 4px solid #2ecc71;
 }
-}
+
 
 
 a:focus, button:focus, #backToTop:focus { outline: 3px solid rgba(179,0,71,0.18); outline-offset: 3px; }
