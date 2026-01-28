@@ -144,14 +144,6 @@ html, body {
 }
 
 
-footer {
-  padding: 40px 20px;
-  text-align: center;
-  background-color: rgb(120, 96, 96);
-  color: #ffe6f2;
-}
-
-
 .info-label {
   font-weight: 700;
   font-size: 16px;

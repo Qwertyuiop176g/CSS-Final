@@ -105,10 +105,50 @@ a, button {
 }
 
 nav a.logo img {
-    height: 80px;   /* adjust to fit navbar */
+    height: 80px;  
     width: auto;
-    margin-right: 1px; /* space between logo and links */
+    margin-right: 1px; 
 }
+
+.footer-container {
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    gap: 300px;             
+    padding: 15px 30px;
+}
+
+.footer-left p,
+.footer-right p {
+    margin: 5px 0;
+}
+
+.footer-right {
+    text-align: center;
+}
+
+#back-to-top {
+    position: fixed;      
+    bottom: 30px;           
+    right: 30px;            
+    padding: 10px 15px;     
+    font-size: 16px;
+    background-color: #b30047;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    display: none;    
+    z-index: 1000;         
+    transition: background-color 0.3s;
+}
+
+#back-to-top:hover {
+    background-color: #990036;
+}
+
+
 
 @media (max-width: 600px) {
     nav {
@@ -124,25 +164,8 @@ nav a.logo img {
         font-size: 16px;
     }
         nav a.logo img {
-        height: 30px;     /* smaller on mobile */
-        margin-right: 0;  /* stacked layout */
-        margin-bottom: 10px; /* space under logo */
+        height: 30px;   
+        margin-right: 0; 
+        margin-bottom: 10px; 
     }
-}
-
-.footer-container {
-    display: flex;
-    justify-content: center;  /* centers both sections */
-    align-items: center;
-    gap: 300px;                /* controls how close they are */
-    padding: 15px 30px;
-}
-
-.footer-left p,
-.footer-right p {
-    margin: 5px 0;
-}
-
-.footer-right {
-    text-align: center;
 }

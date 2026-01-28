@@ -23,16 +23,6 @@ main {
     flex: 1;                    
 }
 
-footer, #footer-container {
-    flex-shrink: 0;             
-}
-
-#footer-container {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 15px 10px;
-}
 
 /* ---------------------------- */
 /* Sections                     */
