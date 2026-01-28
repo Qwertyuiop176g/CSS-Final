@@ -1,130 +1,97 @@
-.custom-itinerary {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 20px;
-    background: #fffaf0;
-    border-radius: 12px;
-    border: 2px solid #ff9900;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    flex: 1;
+function attachButtonToggle(btn) {
+    btn.addEventListener("click", () => {
+        btn.classList.toggle("selected");
+    });
 }
 
-.custom-itinerary h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #b30047;
+document.querySelectorAll(".attraction-btn").forEach(attachButtonToggle);
+
+const attractionContainer = document.querySelector(".attraction-buttons");
+const customInputContainer = document.querySelector(".custom-attractions");
+
+function createNewInput() {
+    const input = document.createElement("input");
+    input.type = "text";
+    input.id = "custom-attraction-input";
+    input.placeholder = "Add your own destination and press Enter";
+    input.style.padding = "10px 15px";
+    input.style.fontSize = "14px";
+    input.style.border = "2px dashed #26A69A";
+    input.style.borderRadius = "6px";
+    input.style.minWidth = "120px";
+    input.style.boxSizing = "border-box";
+    input.style.textAlign = "center";
+
+    input.addEventListener("keypress", handleCustomInput);
+    customInputContainer.appendChild(input);
+    input.focus();
 }
 
-.planner-inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 2rem;
+function handleCustomInput(e) {
+    if (e.key === "Enter") {
+        const value = e.target.value.trim();
+        if (value === "") return;
+
+        const newBtn = document.createElement("button");
+        newBtn.type = "button";
+        newBtn.classList.add("attraction-btn", "selected");
+        newBtn.textContent = value;
+
+        attachButtonToggle(newBtn);
+
+        attractionContainer.appendChild(newBtn);
+
+        e.target.remove();
+
+        createNewInput();
+    }
 }
 
-.planner-inputs label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
+const firstInput = document.getElementById("custom-attraction-input");
+if (firstInput) {
+    firstInput.addEventListener("keypress", handleCustomInput);
 }
 
-.planner-inputs input {
-    width: 100%;
-    padding: 8px 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+const generateBtn = document.getElementById("generate-plan");
+const userPlanDiv = document.getElementById("user-plan");
 
-.attraction-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
+generateBtn.addEventListener("click", () => {
+    const numDays = parseInt(document.getElementById("num-days").value);
 
-.attraction-btn {
-    padding: 8px 12px;
-    background-color: #eee;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
+    const selectedAttractions = Array.from(document.querySelectorAll(".attraction-btn.selected"))
+        .map(btn => btn.textContent);
 
-.attraction-btn.selected {
-    background-color: #b30047;
-    color: #fff;
-    border-color: #990036;
-}
+    if (!numDays || selectedAttractions.length === 0) {
+        userPlanDiv.innerHTML = "<p style='color:red;'>Please select days and at least one attraction!</p>";
+        return;
+    }
 
-.planner-inputs button#generate-plan {
-    padding: 10px 20px;
-    background-color: #b30047;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
+    userPlanDiv.innerHTML = ""; // Clear previous plan
 
-.planner-inputs button#generate-plan:hover {
-    background-color: #990036;
-}
+    for (let day = 1; day <= numDays; day++) {
+        const dayAttractions = selectedAttractions.filter((_, i) => i % numDays === (day - 1));
 
-.plan-output {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
+        const dayCard = document.createElement("div");
+        dayCard.classList.add("day-card");
 
-.day-card {
-    background: #ffe0e6;
-    border: 2px solid #b30047;
-    border-radius: 10px;
-    padding: 15px 20px;
-    min-width: 200px;
-    flex: 1 1 220px;
-}
+        const dayHeader = document.createElement("h3");
+        dayHeader.textContent = `Day ${day}`;
+        dayCard.appendChild(dayHeader);
 
-.day-card h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #b30047;
-}
+        if (dayAttractions.length > 0) {
+            const ul = document.createElement("ul");
+            dayAttractions.forEach(attraction => {
+                const li = document.createElement("li");
+                li.textContent = attraction;
+                ul.appendChild(li);
+            });
+            dayCard.appendChild(ul);
+        } else {
+            const p = document.createElement("p");
+            p.textContent = "No attractions planned.";
+            dayCard.appendChild(p);
+        }
 
-.day-card ul {
-    padding-left: 20px;
-    margin: 0;
-}
-
-html {
-    font-size: 25px; /* was 16px, increased by 4px */
-}
-
-/* Set body full height and background */
-body {
-    min-height: 100vh;          /* ensures body is at least full viewport height */
-    display: flex;              /* allows flex layout to push footer down */
-    flex-direction: column;     /* stack content vertically */
-    margin: 0;                  /* remove default margin */
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-size: 100vh;     /* your requested background size */
-    background-repeat: no-repeat;
-    background-position: top center;
-}
-
-/* Main content should expand to fill available space */
-.content-container,
-main {
-    flex: 1;                    /* grow to fill vertical space before footer */
-}
-
-
-/* Optional: keep footer visible at bottom on very short pages */
-footer, #footer-container {
-    flex-shrink: 0;             /* prevent footer from shrinking */
-}
-
+        userPlanDiv.appendChild(dayCard);
+    }
+});
