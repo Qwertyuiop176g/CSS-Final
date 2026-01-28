@@ -1,18 +1,84 @@
-// Button selection
-const attractionButtons = document.querySelectorAll(".attraction-btn");
-attractionButtons.forEach(btn => {
+// -----------------------------
+// Attraction Button Selection
+// -----------------------------
+function attachButtonToggle(btn) {
     btn.addEventListener("click", () => {
         btn.classList.toggle("selected");
     });
-});
+}
 
-// Generate plan
+// Attach to existing buttons
+document.querySelectorAll(".attraction-btn").forEach(attachButtonToggle);
+
+// -----------------------------
+// Custom Attraction Input
+// -----------------------------
+const attractionContainer = document.querySelector(".attraction-buttons");
+const customInputContainer = document.querySelector(".custom-attractions");
+
+// Function to create a new input box
+function createNewInput() {
+    const input = document.createElement("input");
+    input.type = "text";
+    input.id = "custom-attraction-input";
+    input.placeholder = "Add your own destination and press Enter";
+    input.style.padding = "10px 15px";
+    input.style.fontSize = "14px";
+    input.style.border = "2px dashed #26A69A";
+    input.style.borderRadius = "6px";
+    input.style.minWidth = "120px";
+    input.style.boxSizing = "border-box";
+    input.style.textAlign = "center";
+
+    input.addEventListener("keypress", handleCustomInput);
+    customInputContainer.appendChild(input);
+    input.focus();
+}
+
+// Handle pressing Enter in the input
+function handleCustomInput(e) {
+    if (e.key === "Enter") {
+        const value = e.target.value.trim();
+        if (value === "") return;
+
+        // Create a new button with the input value
+        const newBtn = document.createElement("button");
+        newBtn.type = "button";
+        newBtn.classList.add("attraction-btn", "selected");
+        newBtn.textContent = value;
+
+        // Attach toggle behavior
+        attachButtonToggle(newBtn);
+
+        // Add the button to the attraction container
+        attractionContainer.appendChild(newBtn);
+
+        // Remove the old input box
+        e.target.remove();
+
+        // Create a new empty input box
+        createNewInput();
+    }
+}
+
+// Initialize the first input if exists
+const firstInput = document.getElementById("custom-attraction-input");
+if (firstInput) {
+    firstInput.addEventListener("keypress", handleCustomInput);
+}
+
+// -----------------------------
+// Generate Trip Plan
+// -----------------------------
 const generateBtn = document.getElementById("generate-plan");
 const userPlanDiv = document.getElementById("user-plan");
 
 generateBtn.addEventListener("click", () => {
     const numDays = parseInt(document.getElementById("num-days").value);
-    const selectedAttractions = Array.from(document.querySelectorAll(".attraction-btn.selected")).map(btn => btn.textContent);
+
+    // Include all selected buttons (predefined + custom)
+    const selectedAttractions = Array.from(document.querySelectorAll(".attraction-btn.selected"))
+        .map(btn => btn.textContent);
 
     if (!numDays || selectedAttractions.length === 0) {
         userPlanDiv.innerHTML = "<p style='color:red;'>Please select days and at least one attraction!</p>";
@@ -21,7 +87,7 @@ generateBtn.addEventListener("click", () => {
 
     userPlanDiv.innerHTML = ""; // Clear previous plan
 
-    // Distribute attractions evenly
+    // Distribute attractions evenly across days
     for (let day = 1; day <= numDays; day++) {
         const dayAttractions = selectedAttractions.filter((_, i) => i % numDays === (day - 1));
 
