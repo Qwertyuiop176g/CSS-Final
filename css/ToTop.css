@@ -1,0 +1,20 @@
+#back-to-top {
+    position: fixed;        /* stays in the same place while scrolling */
+    bottom: 30px;           /* distance from bottom */
+    right: 30px;            /* distance from right */
+    padding: 10px 15px;     
+    font-size: 16px;
+    background-color: #b30047;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    display: none;          /* hide initially */
+    z-index: 1000;          /* above other elements */
+    transition: background-color 0.3s;
+}
+
+#back-to-top:hover {
+    background-color: #990036;
+}
