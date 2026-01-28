@@ -1,214 +1,213 @@
-:root{
-  --card-radius: 14px;
-  --text-color: #3b2d2d;
-  --muted: #6b5a5a;
-  --accent: #b30047;
-  --page-bg: #f7f7f8;
-  --max-width: 1200px;
+/* ---------------------------- */
+/* General Page & Layout        */
+/* ---------------------------- */
+
+html {
+    font-size: 25px; /* was 16px, increased by 4px */
 }
 
-* { box-sizing: border-box; }
-
-html, body {
-  margin: 0;
-  padding: 0;
-  background: var(--page-bg);
-  color: var(--text-color);
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height: 1.5;
-  cursor: url("../images/cursor.png"), auto;
+body {
+    min-height: 100vh;          
+    display: flex;              
+    flex-direction: column;     
+    margin: 0;                  
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: 100vh;     
+    background-repeat: no-repeat;
+    background-position: top center;
 }
 
-
-
-.attraction-section {
-  position: relative;
-  background-image: url('../images/attraction2.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 520px;
-  padding: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  color: white;
-  overflow: hidden;
+.content-container,
+main {
+    flex: 1;                    
 }
 
-
-.attraction-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.25));
-  z-index: 0;
-}
-.attraction-section * { position: relative; z-index: 1; }
-
-.text-box {
-  background-color: rgba(0,0,0,0.45);
-  padding: 36px;
-  border-radius: 12px;
-  max-width: 720px;
-  box-sizing: border-box;
+footer, #footer-container {
+    flex-shrink: 0;             
 }
 
-
-.header {
-  margin: 0 0 12px 0;
-  font-size: clamp(28px, 4.4vw, 48px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-.paragraph {
-  margin: 0 0 12px 0;
-  font-size: clamp(15px, 1.3vw, 18px);
-  color: #f1eaea;
+#footer-container {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
 }
 
+/* ---------------------------- */
+/* Sections                     */
+/* ---------------------------- */
 
-.card {
-  --card-bg: #ffe6f2;
-  --card-border: #cc3366;
-  --card-title: var(--accent);
-
-  background-color: var(--card-bg);
-  border: 3px solid var(--card-border);
-  border-radius: var(--card-radius);
-  padding: 1.75rem 2.25rem;
-  width: min(95%, var(--max-width));
-  margin: 1.5rem auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  box-shadow: 0 8px 26px rgba(21,21,21,0.08);
-  transition: transform 220ms ease, box-shadow 220ms ease;
+.intro {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px 20px;
+    background-color: lightgray;
+    border: 2px solid black;
+    border-radius: 8px;
+    text-align: center;
 }
 
-/* subtle lift on hover for pointer devices */
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(21,21,21,0.12);
+.intro ol {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Title and underline */
-.card-title {
-  font-size: clamp(20px, 2.4vw, 28px);
-  font-weight: 700;
-  text-align: center;
-  margin: 0;
-  color: var(--card-title);
-  padding-bottom: 6px;
-  position: relative;
-}
-.card-title::after {
-  content: "";
-  display: block;
-  height: 3px;
-  width: 60%;
-  margin: 6px auto 0;
-  background: var(--card-border);
-  border-radius: 2px;
+.tophalf {
+    background: linear-gradient(to right, #2196f3, #00bcd4);
+    padding-bottom: 40px;
 }
 
-
-.flexside {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
+.bottomhalf {
+    background-color: #4DB6AC;
+    padding-top: 40px;
 }
 
-
-.card img {
-  width: 100%;
-  max-width: 700px;
-  border-radius: 10px;
-  display: block;
-  flex: 0 0 45%;
-  object-fit: cover;
+hr {
+    margin: 0;
+    height: 4px;
+    border: none;
+    background: black;
 }
 
+/* ---------------------------- */
+/* Custom Itinerary / Planner   */
+/* ---------------------------- */
 
-.card-content {
-  flex: 1;
-  max-width: 720px;
-  font-size: clamp(14px, 1.2vw, 17px);
-  line-height: 1.6;
-  color: var(--text-color);
-  text-align: left;
+.custom-itinerary {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 20px;
+    background: #fffaf0;
+    border-radius: 12px;
+    border: 2px solid #ff9900;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    flex: 1;
 }
 
-
-footer {
-  padding: 40px 20px;
-  text-align: center;
-  background-color: rgb(120, 96, 96);
-  color: #ffe6f2;
+.custom-itinerary h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #b30047;
 }
 
-
-.info-label {
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--muted);
+.planner-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 2rem;
 }
 
-
-@media (min-width: 1200px){
-  .card { width: 85%; }
+.planner-inputs label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
 }
 
-
-@media (max-width: 1058px) {
-  .attraction-section {
-    height: 420px;
-    padding: 32px;
-  }
-  .text-box { padding: 22px; }
-  .flexside { flex-direction: column; gap: 16px; align-items: stretch; }
-  .card img { flex: 0 0 auto; max-width: 100%; width: 100%; }
-  .card { padding: 1.25rem 1.25rem; }
-  .card-title { font-size: clamp(18px, 2.6vw, 24px); }
-  .header { font-size: clamp(22px, 5.2vw, 40px); }
+.planner-inputs input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
+/* ---------------------------- */
+/* Attraction Buttons & Input   */
+/* ---------------------------- */
 
-@media (max-width: 480px) {
-  .attraction-section { height: 300px; padding: 20px; }
-  .text-box { padding: 14px; }
-  .header { font-size: 26px; }
-  .paragraph { font-size: 14px; }
-  .card { padding: 0.85rem 0.85rem; margin: 1rem auto; border-radius: 12px; }
-  .info-label { font-size: 14px; }
-  .card-title { font-size: 18px; }
-  .card-content { font-size: 15px; }
+.attraction-buttons,
+.custom-attractions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
 }
 
+/* Unified style for buttons & input */
+.attraction-btn,
+#custom-attraction-input {
+    padding: 15px 25px;   /* bigger buttons */
+    font-size: 18px;       /* larger text */
+    border: 2px solid #26A69A;
+    border-radius: 8px;
+    min-width: 150px;      /* wider buttons */
+    box-sizing: border-box;
+    text-align: center;
+    transition: all 0.2s ease;
+}
 
-.card-content p { margin-top: 0.6rem; margin-bottom: 0.6rem; }
+/* Buttons specific */
+.attraction-btn {
+    background-color: #eee;
+    cursor: pointer;
+}
 
-#back-to-top {
-    position: fixed;        /* stays in the same place while scrolling */
-    bottom: 30px;           /* distance from bottom */
-    right: 30px;            /* distance from right */
-    padding: 15px 25px;     
-    font-size: 18px;
+.attraction-btn.selected {
+    background-color: #b30047;
+    color: #fff;
+    border-color: #990036;
+}
+
+/* Input specific */
+#custom-attraction-input {
+    outline: none;
+    background-color: #fff;
+    border-style: dashed;
+}
+
+#custom-attraction-input:focus {
+    border-color: #008080;
+}
+
+/* ---------------------------- */
+/* Generate Button              */
+/* ---------------------------- */
+
+.planner-inputs button#generate-plan {
+    padding: 20px 20px;
     background-color: #b30047;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    display: none;          /* hide initially */
-    z-index: 1000;          /* above other elements */
-    transition: background-color 0.3s;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
 }
 
-#back-to-top:hover {
+.planner-inputs button#generate-plan:hover {
     background-color: #990036;
+}
+
+/* ---------------------------- */
+/* Plan Output / Day Cards      */
+/* ---------------------------- */
+
+.plan-output {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.day-card {
+    background: #ffe0e6;
+    border: 2px solid #b30047;
+    border-radius: 10px;
+    padding: 15px 20px;
+    min-width: 200px;
+    flex: 1 1 220px;
+}
+
+.day-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #b30047;
+}
+
+.day-card ul {
+    padding-left: 20px;
+    margin: 0;
 }
