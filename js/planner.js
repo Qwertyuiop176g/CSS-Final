@@ -74,7 +74,3 @@ generateBtn.addEventListener("click", () => {
         day++;
     }
 });
-
-        userPlanDiv.appendChild(dayCard);
-    }
-});
