@@ -1,41 +1,39 @@
-/* ---------------------------- */
-/* General Page & Layout        */
-/* ---------------------------- */
-
 html {
-    font-size: 25px; /* was 16px, increased by 4px */
+    font-size: 25px;
 }
 
 body {
-    min-height: 100vh;          
-    display: flex;              
-    flex-direction: column;     
-    margin: 0;                  
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-size: 100vh;     
     background-repeat: no-repeat;
     background-position: top center;
 }
 
-.content-container,
-main {
-    flex: 1;                    
+footer {
+    flex-shrink: 0;
 }
 
-
-/* ---------------------------- */
-/* Sections                     */
-/* ---------------------------- */
+#days {
+    width: 200px;       
+    padding: 12px 15px;  
+    font-size: 18px;    
+    border-radius: 6px;
+    border: 2px solid #26A69A;
+}
 
 .intro {
-    max-width: 1200px;
+    width: 1200px;
     margin: 40px auto;
-    padding: 40px 20px;
-    background-color: lightgray;
-    border: 2px solid black;
-    border-radius: 8px;
+    padding: 40px 30px;
+    background-color: #fffaf0;      
+    border: 2px solid #b30047;       
+    border-radius: 12px;
     text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .intro ol {
@@ -44,160 +42,135 @@ main {
     margin: 0 auto;
 }
 
-.tophalf {
-    background: linear-gradient(to right, #2196f3, #00bcd4);
-    padding-bottom: 40px;
+.content {
+    text-align: left;          
+    max-width: 1000px;         
+    margin: 0 auto 20px auto; 
+    line-height: 1.6;          
+    font-size: 1.2rem;         
 }
 
-.bottomhalf {
-    background-color: #4DB6AC;
-    padding-top: 40px;
+.intro h1,
+.intro h2 {
+    color: red;
 }
 
-hr {
-    margin: 0;
-    height: 4px;
+.intro h2 {
+    font-size: 30px;
+}
+
+.intro-heading {
+    margin-top: 30px;
     border: none;
-    background: black;
+    padding: 0;
+    background: none;
+    text-align: left;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 30px auto;       
+    font-size: 1.1rem;
+}
+.steps {
+    counter-reset: step-counter; 
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none; 
 }
 
-/* ---------------------------- */
-/* Custom Itinerary / Planner   */
-/* ---------------------------- */
-
-.custom-itinerary {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 20px;
-    background: #fffaf0;
-    border-radius: 12px;
-    border: 2px solid #ff9900;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    flex: 1;
-}
-
-.custom-itinerary h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #b30047;
-}
-
-.planner-inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 2rem;
-}
-
-.planner-inputs label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.planner-inputs input {
-    width: 100%;
-    padding: 8px 10px;
+.steps li {
+    counter-increment: step-counter; 
+    background: #ffe0e6;
+    border-left: 4px solid #b30047;
+    padding: 12px 15px;
+    margin: 10px 0;
     border-radius: 6px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-/* ---------------------------- */
-/* Attraction Buttons & Input   */
-/* ---------------------------- */
-
-.attraction-buttons,
-.custom-attractions {
+    font-size: 1.1rem;
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
+    align-items: center;
+    gap: 8px;
+    position: relative;
 }
 
-/* Unified style for buttons & input */
-.attraction-btn,
-#custom-attraction-input {
-    padding: 15px 25px;   /* bigger buttons */
-    font-size: 18px;       /* larger text */
+.steps li::before {
+    content: counter(step-counter) ". "; 
+    font-weight: bold;
+    color: #b30047;
+    margin-right: 10px;
+}
+
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+    background-size: 800% 800%;
+    animation: gradientAnimation 20s ease infinite;
+    z-index: -1;
+}
+
+.planner {
+    width: 1200px; 
+    margin: 40px auto;
+    background: white;
+    padding: 40px 20px; 
+    border-radius: 8px; 
+    border:2px solid #26A69A;
+}
+
+.planner h1 {
+    color: red;
+}
+
+.group {
+    margin-bottom: 30px;
+}
+
+.attraction {
+    padding: 10px 15px;
+    margin: 5px;
     border: 2px solid #26A69A;
-    border-radius: 8px;
-    min-width: 150px;      /* wider buttons */
-    box-sizing: border-box;
-    text-align: center;
-    transition: all 0.2s ease;
-}
-
-/* Buttons specific */
-.attraction-btn {
-    background-color: #eee;
+    background: #eee;
+    border-radius: 6px;
     cursor: pointer;
 }
 
-.attraction-btn.selected {
-    background-color: #b30047;
-    color: #fff;
-    border-color: #990036;
+.attraction.selected {
+    background: #b30047;
+    color: white;
 }
 
-/* Input specific */
-#custom-attraction-input {
+.custom-input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 30%;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 2px dashed #26A69A;
     outline: none;
-    background-color: #fff;
-    border-style: dashed;
 }
 
-#custom-attraction-input:focus {
-    border-color: #008080;
+.custom-input:focus {
+    border-color: #b30047;
 }
 
-/* ---------------------------- */
-/* Generate Button              */
-/* ---------------------------- */
-
-.planner-inputs button#generate-plan {
-    padding: 20px 20px;
-    background-color: #b30047;
+#generate {
+    padding: 15px;
+    width: 100%;
+    background: #b30047;
     color: white;
     border: none;
     border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    font-size: 18px;
 }
 
-.planner-inputs button#generate-plan:hover {
-    background-color: #990036;
-}
-
-/* ---------------------------- */
-/* Plan Output / Day Cards      */
-/* ---------------------------- */
-
-.plan-output {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.day-card {
+.day {
+    margin-top: 20px;
+    padding: 15px;
     background: #ffe0e6;
-    border: 2px solid #b30047;
-    border-radius: 10px;
-    padding: 15px 20px;
-    min-width: 200px;
-    flex: 1 1 220px;
-}
-
-.day-card h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #b30047;
-}
-
-.day-card ul {
-    padding-left: 20px;
-    margin: 0;
+    border-radius: 8px;
 }
