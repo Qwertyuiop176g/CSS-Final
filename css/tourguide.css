@@ -258,6 +258,9 @@ a:focus, button:focus, #backToTop:focus {
 .rules-column.no {
     border-left: 4px solid #e74c3c;
 }
+.rules-column.no li {
+    margin-bottom: 0.75rem; 
+}
 
 .rules-column.yes {
     border-left: 4px solid #2ecc71;
