@@ -10,8 +10,11 @@
 * { box-sizing: border-box; }
 
 html, body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
+  height: 100%;
   background: var(--page-bg);
   color: var(--text-color);
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
@@ -19,8 +22,19 @@ html, body {
   -moz-osx-font-smoothing:grayscale;
   line-height: 1.5;
   cursor: url("../images/cursor.png"), auto;
+  position: relative;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ensures footer is pushed to bottom */
 }
 
+main {
+  flex: 1 0 auto; /* main content grows to fill space */
+  z-index: 1; /* above animated background */
+  position: relative;
+}
 
 
 .attraction-section {
@@ -29,7 +43,8 @@ html, body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 520px;
+  height: 685px;
+  min-height: 685px;
   padding: 56px;
   display: flex;
   align-items: center;
@@ -144,10 +159,34 @@ html, body {
 }
 
 
+footer {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: rgb(120, 96, 96);
+  color: #ffe6f2;
+}
+
+
 .info-label {
   font-weight: 700;
   font-size: 16px;
   color: var(--muted);
+}
+.card-content p { margin-top: 0.6rem; margin-bottom: 0.6rem; }
+
+/* Animated background */
+.animated-bg {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100%;   /* use viewport width */
+    height: 100%;  /* use viewport height */
+    background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+    background-size: 800% 800%;
+    animation: gradientAnimation 20s ease infinite;
+    z-index: -1;
 }
 
 
@@ -181,6 +220,10 @@ html, body {
   .card-content { font-size: 15px; }
 }
 
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-.card-content p { margin-top: 0.6rem; margin-bottom: 0.6rem; }
 
