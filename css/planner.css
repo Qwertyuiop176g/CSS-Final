@@ -174,3 +174,72 @@ footer {
     background: #ffe0e6;
     border-radius: 8px;
 }
+
+@media (max-width: 900px) {
+    .intro,
+    .planner {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    .content {
+        font-size: 1.1rem;
+    }
+
+    .custom-input {
+        width: 60%;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 18px;
+    }
+
+    .intro,
+    .planner {
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px 15px;
+    }
+
+    .intro h1 {
+        font-size: 1.6rem;
+    }
+
+    .intro h2 {
+        font-size: 1.3rem;
+    }
+
+    .content {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .steps li {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    #days {
+        width: 100%;
+    }
+
+    .custom-input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .intro h1 {
+        font-size: 1.4rem;
+    }
+
+    .content {
+        font-size: 0.95rem;
+    }
+
+    .steps li {
+        font-size: 0.95rem;
+    }
+}
