@@ -239,14 +239,10 @@ a:focus, button:focus, #backToTop:focus {
   outline-offset: 3px;
 }
 
-/* Mobile Responsive Section */
-
-/* 1500px → 1400px: fix cramped row layout */
 @media (max-width: 1400px) {
   .flexside img { width: auto; }
   .card-content { width: auto; }
 }
-
 
 @media (max-width: 1000px) {
   .attraction-section { padding: clamp(2rem, 6vw, 4rem) 0; }
@@ -259,7 +255,7 @@ a:focus, button:focus, #backToTop:focus {
 
   .flexside img,
   .card-content {
-    width: 100%;  /* stacked in column */
+    width: 100%;  
   }
 
   .content-left { padding: 0 clamp(.65rem, 2vw, 1rem); }
@@ -267,8 +263,6 @@ a:focus, button:focus, #backToTop:focus {
   .card:nth-child(even) .flexside { flex-direction: column-reverse; }
 }
 
-
-/* Small phones */
 @media (max-width: 380px) {
   .header { font-size: 1.6rem; }
   .paragraph, .card-content { font-size: 1rem; }
