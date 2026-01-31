@@ -234,15 +234,41 @@ main {
 
 /* Small screens */
 @media (max-width: 600px) {
-  .attraction-section { height: 300px; padding: 20px; }
-  .text-box { padding: 14px; }
-  .header { font-size: 26px; }
-  .paragraph { font-size: 14px; }
-  .card { padding: 0.85rem 0.85rem; margin: 1rem auto; border-radius: 12px; }
-  .info-label { font-size: 14px; }
-  .card-title { font-size: 18px; }
-  .card-content { font-size: 15px; }
+  .attraction-section { 
+      height: 300px; 
+      padding: 20px; 
+  }
+  .text-box { 
+      padding: 14px; 
+  }
+  .header { 
+      font-size: 26px; 
+  }
+  .paragraph { 
+      font-size: 14px; 
+  }
+
+  .flexside {
+      flex-direction: column;
+      gap: 12px;                
+      align-items: stretch;
+  }
+
+  .card img {
+      width: 100%;           
+      height: auto;            
+      flex: none;           
+  }
+
+  .card-content {
+      font-size: 15px;
+      width: 100%;       
+      flex: none;         
+      min-width: 0;          
+      overflow-wrap: break-word;
+  }
 }
+
 
 /* ================= ANIMATION ================= */
 /* Keyframes for animated gradient */
