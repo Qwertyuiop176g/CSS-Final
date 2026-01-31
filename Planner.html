@@ -1,87 +1,115 @@
 <!DOCTYPE html>
     <head>
         <title>
-            Hot Tourist Destinations
+            Singapore Trip Planner
         </title>
         <link rel="stylesheet" href="css/Style.css">
         <link rel="stylesheet" href="css/Planner.css">
     </head>
 
     <body>
-        <div id="nav-container" role="navigation" aria-label="Main navigation"></div>
-        <div class="animated-bg"></div>
-        <section class="intro">
-            <h1>Welcome to the Trip Planner</h1>
-    
-            <p class="content">
-                The Singapore Trip Planner helps tourists quickly create a personalised itinerary. 
-                Choose the number of days, select attractions by category, 
-                and add any specific destinations. Then click Generate Itinerary to get a clear, organised daily plan.
-            </p>
-    
-            <h2 class="intro-heading">How to Use the Trip Planner</h2>
-    
-            <ol class="steps">
-                <li>📝 Type the number of days for your trip.</li>
-                <li>📍 Click attractions in City, Cultural, or Nature categories.</li>
-                <li>➕ Type your own attractions in the box under the category and press Enter.</li>
-                <li>🗓️ Click “Generate Itinerary” to create your daily plan.</li>
-                <li>🔄 View and adjust the plan as needed.</li>
-            </ol>
-        </section>
-       
-        <section class="planner">
-            <h1>Plan Your Singapore Trip</h1>
-    
-            <label for="days">Number of Days:</label>
-            <input type="number" id="days" min="1" max="5" value="1">
-            <br>
-            <br>
-    
-            <h2>Select Attractions</h2>
-            <br>
-    
-            <div class="group" data-area="City">
-                <h3>🏙️ City Area</h3>
-                <button class="attraction" data-area="City">Marina Bay Sands</button>
-                <button class="attraction" data-area="City">Merlion Park</button>
-                <button class="attraction" data-area="City">Orchard Road</button>
-    
-                <input
-                    type="text"
-                    class="custom-input"
-                    placeholder="Add a city attraction & press Enter"
-                />
-            </div>
-    
-            <div class="group" data-area="Cultural">
-                <h3>🏮 Cultural</h3>
-                <button class="attraction" data-area="Cultural">Chinatown</button>
-                <button class="attraction" data-area="Cultural">Little India</button>
-    
-                <input
-                    type="text"
-                    class="custom-input"
-                    placeholder="Add a cultural attraction & press Enter"
-                />
-            </div>
-    
-            <div class="group" data-area="Nature">
-                <h3>🌿 Nature</h3>
-                <button class="attraction" data-area="Nature">Gardens by the Bay</button>
-                <button class="attraction" data-area="Nature">Singapore Zoo</button>
-    
-                <input
-                    type="text"
-                    class="custom-input"
-                    placeholder="Add a nature attraction & press Enter"
-                />
-            </div>
-    
-            <button id="generate">Generate Itinerary</button>
-    
-            <div id="output"></div>
-        </section>
+    <div id="nav-container" role="navigation" aria-label="Main navigation"></div>
+
+    <header class="head" role="banner">
+      <div class="head-inner">
+        <h1>Singapore Trip Planner</h1>
+        <p class="subhead">Plan your perfect Singapore adventure with ease <br> create a personalized itinerary in just a few clicks.</p>
+        </div>
+      </div>
+    </header>
+    <main id="main" role="main">
+    <!-- Welcome + Image side by side -->
+    <section class="intro split-section" aria-labelledby="planner-title">
+        <div class="text-box" id="planner">
+        <h2 id="planner-title">Welcome to the Trip Planner</h2>
+        <p class="content">
+            The Singapore Trip Planner helps tourists quickly create a personalised itinerary. 
+            Choose the number of days, select attractions by category, 
+            and add any specific destinations. Then click Generate Itinerary to get a clear, organised daily plan.
+        </p>
+        </div>
+
+        <div class="image-box" aria-hidden="false">
+        <img src="images/tripplanner.avif" alt="Friendly illustration of planning a trip" />
+        </div>
+    </section>
+
+    <!-- How to Use section below -->
+    <section class="how-to">
+        <h3 class="intro-heading">How to Use the Trip Planner</h3>
+        <ol class="steps">
+        <li>📝 Type the number of days for your trip.</li>
+        <li>📍 Click attractions in City, Cultural, or Nature categories.</li>
+        <li>➕ Type your own attractions in the box under the category and press Enter.</li>
+        <li>🗓️ Click “Generate Itinerary” to create your daily plan.</li>
+        <li>🔄 View and adjust the plan as needed.</li>
+        </ol>
+    </section>
+    </main>
+
+   
+    <section class="planner">
+        <h1>Plan Your Singapore Trip</h1>
+
+        <label for="days">Number of Days:</label>
+        <input type="number" id="days" min="1" max="5" value="1">
+        <br>
+        <br>
+
+        <h2>Select Attractions</h2>
+        <br>
+
+        <div class="group" data-area="City">
+         <div class="banner">
+            <img src="images/mbs.jpg" alt="City Attractions">
+            <h3>🏙️ City Area</h3>
+         </div>
+            <button class="attraction" data-area="City">Marina Bay Sands</button>
+            <button class="attraction" data-area="City">Merlion Park</button>
+            <button class="attraction" data-area="City">Orchard Road</button>
+         
+            <input
+                type="text"
+                class="custom-input"
+                placeholder="Add a city attraction & press Enter"
+            />
+        </div>
+        <br>
+        <div class="group" data-area="Cultural">
+         <div class="banner">
+            <img src="images/chinatown.jpg" alt="Cultural Attractions">
+            <h3>🏮 Cultural</h3>
+         </div>
+
+            <button class="attraction" data-area="Cultural">Chinatown</button>
+            <button class="attraction" data-area="Cultural">Little India</button>
+
+            <input
+                type="text"
+                class="custom-input"
+                placeholder="Add a cultural attraction & press Enter"
+            />
+        </div>
+        <br>
+        <div class="group" data-area="Nature">
+         <div class="banner">
+            <img src="images/zoo.avif" alt="Nature Attractions">
+            <h3>🌿 Nature</h3>
+         </div>
+            <button class="attraction" data-area="Nature">Gardens by the Bay</button>
+            <button class="attraction" data-area="Nature">Singapore Zoo</button>
+         
+            <input
+                type="text"
+                class="custom-input"
+                placeholder="Add a nature attraction & press Enter"
+            />
+        </div>
+
+        <button id="generate">✨Build My Adventure!</button>
+
+        <div id="output"></div>
+    </section>
 
 
         <button id="back-to-top" title="Go to top">↑ Top</button>
