@@ -1,13 +1,13 @@
 (function () {
   'use strict';
 
-  // Disable custom cursor effects on touch devices
-  const isTouch =
-    'ontouchstart' in window ||
-    navigator.maxTouchPoints > 0 ||
-    navigator.msMaxTouchPoints > 0;
+  /*
+    Disable custom cursor only on touch devices
+  */
+  const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+  const hasHover = window.matchMedia('(hover: hover)').matches;
 
-  if (isTouch) {
+  if (isCoarsePointer && !hasHover) {
     document.documentElement.classList.add('no-custom-cursor');
   }
 
@@ -16,7 +16,7 @@
     if (!btn) return;
 
     function toggleVisibility() {
-      btn.style.display = window.scrollY > 100 ? 'block' : 'none';
+      btn.classList.toggle('is-visible', window.scrollY > 100);
     }
 
     // Show / hide on scroll
@@ -40,3 +40,5 @@
     initBackToTop();
   }
 })();
+
+
