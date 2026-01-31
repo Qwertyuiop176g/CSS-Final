@@ -1,4 +1,4 @@
-/* ================= RESET ================= */
+/*  RESET  */
 *,
 *::before,
 *::after {
@@ -7,17 +7,17 @@
     box-sizing: border-box;
 }
 
-/* ================= BODY ================= */
+/*  BODY */
 body {
     font-family: Arial, sans-serif;
     background-color: #fafafa;
     line-height: 1.5;
     display: flex;
-    flex-direction: column; /* allow footer to stick at bottom */
+    flex-direction: column; 
     min-height: 100vh;
 }
 
-/* ================= NAVIGATION ================= */
+/*  NAVIGATION  */
 #nav-container {
     width: 100%;
     margin: 0;
@@ -60,7 +60,7 @@ body {
     margin-right: 1px;
 }
 
-/* ================= CUSTOM CURSOR ================= */
+/*  CUSTOM CURSOR  */
 html,
 body {
     cursor: url("../images/cursor.png"), auto;
@@ -76,13 +76,13 @@ html.no-custom-cursor .custom-cursor {
     display: none;
 }
 
-/* ================= CLICKABLE ELEMENTS ================= */
+/*  CLICKABLE ELEMENTS  */
 a,
 button {
     cursor: pointer;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER  */
 #main-footer {
     position: relative;
     margin-top: auto; 
@@ -128,7 +128,7 @@ button {
     text-align: center;
 }
 
-/* ================= BACK TO TOP ================= */
+/* BACK TO TOP BUTTON */
 #back-to-top {
     display: none;
     position: fixed;
@@ -154,7 +154,7 @@ button {
     background-color: #990036;
 }
 
-/* ================= RESPONSIVE NAV & FOOTER ================= */
+/*  RESPONSIVE NAV & FOOTER */
 @media (max-width: 600px) {
     #nav-container nav {
         flex-direction: column;
