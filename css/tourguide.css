@@ -244,16 +244,15 @@ a:focus, button:focus, #backToTop:focus {
 
 a:focus, button:focus, #backToTop:focus { outline: 3px solid rgba(179,0,71,0.18); outline-offset: 3px; }
 
-@media (max-width: 1100px) {
+@media (max-width: 1500px) {
   .flexside img { width: 48%; }
   .card-content { width: 52%; }
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .attraction-section { padding: clamp(2rem, 6vw, 4rem) 0; }
     .header { font-size: clamp(1.5rem, 4.5vw, 2rem); }
-    .card { margin: 1.25rem clamp(.75rem, 3vw, 1.25rem); padding: clamp(.85rem, 2.2vw, 1.25rem); }
 
     .flexside {
         flex-direction: column;
@@ -266,8 +265,8 @@ a:focus, button:focus, #backToTop:focus { outline: 3px solid rgba(179,0,71,0.18)
         height: auto;
     }
 
-    .card-content { width: 100%; margin-top: .5rem; }
-    .content-left { padding: 0 clamp(.75rem, 2vw, 1rem); }
+    .card-content { width: 90%; margin-top: .5rem; }
+    .content-left { padding: 0 clamp(.65rem, 2vw, 1rem); }
 
     .card:nth-child(even) .flexside {
     flex-direction: column-reverse;
@@ -276,7 +275,7 @@ a:focus, button:focus, #backToTop:focus { outline: 3px solid rgba(179,0,71,0.18)
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .header { font-size: clamp(1.25rem, 5.6vw, 1.8rem); }
     .paragraph, .card-content { font-size: 1.02rem; }
     .card { padding: clamp(.6rem, 2.4vw, .9rem); border-radius: 12px; }
