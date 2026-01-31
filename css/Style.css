@@ -25,6 +25,28 @@ body {
     z-index: 1;
 }
 
+/* HAMBURGER BUTTON */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 14px 16px;
+}
+
+/* NAV LINKS WRAPPER */
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
 #nav-container nav {
     background-color: #4e4444;
     display: flex;
@@ -185,6 +207,36 @@ button {
     #main-footer .footer-left,
     #main-footer .footer-right {
         width: 100%;
+    }
+}
+
+
+/* MOBILE STYLES */
+@media (max-width: 600px) {
+    .hamburger {
+        display: block;
+        margin-left: auto;
+    }
+
+    #nav-container nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: #4e4444;
+    }
+
+    .nav-links a {
+        padding: 14px 16px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-links.open {
+        display: flex;
     }
 }
 
