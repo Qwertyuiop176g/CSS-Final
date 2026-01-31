@@ -277,8 +277,8 @@ main {
     padding: 0;
     top: 0;
     left: 0;
-    width: 100%;   
-    height: 100%; 
+    width: 100vw;   
+    height: 100vh; 
     background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
     background-size: 800% 800%;
     animation: gradientAnimation 20s ease infinite;
