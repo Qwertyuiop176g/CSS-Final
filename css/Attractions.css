@@ -26,7 +26,6 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* ensures footer is pushed to bottom */
 }
 
 main {
@@ -161,12 +160,7 @@ main {
 }
 
 
-footer {
-  padding: 40px 20px;
-  text-align: center;
-  background-color: rgb(120, 96, 96);
-  color: #ffe6f2;
-}
+
 
 
 .info-label {

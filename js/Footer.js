@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navHTML = `
     <footer>
-        <div class="footer-container">
+        <div id ="main-footer">
             <div class="footer-left">
                 <h3>Author: Group 4</h3>
                 <h3>Email: <a href="mailto:here@example.com">here@example.com</a></h3>
