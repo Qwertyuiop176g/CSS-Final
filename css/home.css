@@ -1,20 +1,36 @@
+/* =========================
+   CSS Variables (Global)
+   ========================= */
 :root{
-  --max-width: 1200px;
-  --page-padding: 24px;
-  --muted: #6b5a5a;
-  --accent: #b30047;
-  --hero-overlay: rgba(0,0,0,0.45);
-  --card-bg: #ffffff;
-  --gap: 20px;
+  --max-width: 1200px;          /* Maximum content width */
+  --page-padding: 24px;         /* Default page padding */
+  --muted: #6b5a5a;             /* Muted text color */
+  --accent: #b30047;            /* Accent / primary brand color */
+  --hero-overlay: rgba(0,0,0,0.45); /* Overlay color for hero sections */
+  --card-bg: #ffffff;           /* Background color for cards */
+  --gap: 20px;                  /* Default spacing gap */
 }
 
+/* Apply box-sizing globally */
 * { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; color:#222; }
+
+/* Base styles for html and body */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  color:#222;
+}
 
 
+/* =========================
+   Hero / Header Section
+   ========================= */
 .head {
   position: relative;
-  background-image: url('../images/sg_evening.jpg');
+  background-image: url('../images/sg_evening.jpg'); /* Hero background image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -29,6 +45,7 @@ html, body { height: 100%; margin: 0; font-family: 'Inter', system-ui, -apple-sy
   overflow: hidden;
 }
 
+/* Dark overlay on hero background for text readability */
 .head::before {
   content: "";
   position: absolute;
@@ -37,6 +54,7 @@ html, body { height: 100%; margin: 0; font-family: 'Inter', system-ui, -apple-sy
   pointer-events: none;
 }
 
+/* Inner container for hero content */
 .head-inner {
   position: relative;
   max-width: var(--max-width);
@@ -45,6 +63,7 @@ html, body { height: 100%; margin: 0; font-family: 'Inter', system-ui, -apple-sy
   padding: 28px;
 }
 
+/* Main hero heading */
 .head h1 {
   margin: 0 0 12px 0;
   font-size: clamp(28px, 6vw, 56px);
@@ -53,6 +72,7 @@ html, body { height: 100%; margin: 0; font-family: 'Inter', system-ui, -apple-sy
   text-shadow: 0 6px 20px rgba(0,0,0,0.45);
 }
 
+/* Subtitle under the hero heading */
 .subhead {
   margin: 0 0 18px 0;
   font-size: clamp(14px, 1.6vw, 20px);
@@ -61,6 +81,9 @@ html, body { height: 100%; margin: 0; font-family: 'Inter', system-ui, -apple-sy
 }
 
 
+/* =========================
+   Hero Buttons
+   ========================= */
 .hero-actions {
   display: flex;
   gap: 12px;
@@ -69,6 +92,7 @@ html, body { height: 100%; margin: 0; font-family: 'Inter', system-ui, -apple-sy
   margin-top: 8px;
 }
 
+/* Shared button styles */
 a.btn-primary, a.btn-ghost {
   display: inline-block;
   padding: 10px 18px;
@@ -78,14 +102,14 @@ a.btn-primary, a.btn-ghost {
   font-size: 15px;
 }
 
-
+/* Primary button style */
 a.btn-primary {
   background: var(--accent);
   color: #fff;
   box-shadow: 0 8px 20px rgba(179,0,71,0.18);
 }
 
-
+/* Secondary / ghost button style */
 a.btn-ghost {
   background: rgba(255,255,255,0.12);
   color: #fff;
@@ -93,6 +117,9 @@ a.btn-ghost {
 }
 
 
+/* =========================
+   Split Section Layout
+   ========================= */
 .split-section {
   display: flex;
   gap: var(--gap);
@@ -103,8 +130,10 @@ a.btn-ghost {
   align-items: stretch;
 }
 
+/* Reverses content order */
 .split-section.reverse { flex-direction: row-reverse; }
 
+/* Text content box */
 .text-box {
   flex: 1;
   background-color: #f7f7f2;
@@ -115,13 +144,21 @@ a.btn-ghost {
   min-width: 260px;
 }
 
+/* Headings inside text box */
 .text-box h2, .text-box h3 {
   margin-top: 0;
   color: #222;
 }
 
-.text-box p { color: #333; line-height: 1.55; margin-bottom: 12px; font-size: 16px; }
+/* Paragraph styling inside text box */
+.text-box p {
+  color: #333;
+  line-height: 1.55;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
 
+/* Image container */
 .image-box {
   flex: 1;
   min-height: 280px;
@@ -129,6 +166,7 @@ a.btn-ghost {
   border-radius: 6px;
 }
 
+/* Image scaling inside image box */
 .image-box img {
   width: 100%;
   height: 100%;
@@ -137,6 +175,9 @@ a.btn-ghost {
 }
 
 
+/* =========================
+   Feature Grid & Cards
+   ========================= */
 .feature-grid {
   max-width: var(--max-width);
   margin: 24px auto 64px auto;
@@ -146,6 +187,7 @@ a.btn-ghost {
   padding: 0 var(--page-padding);
 }
 
+/* Individual feature card */
 .feature-card {
   background: var(--card-bg);
   border-radius: 10px;
@@ -155,6 +197,7 @@ a.btn-ghost {
   padding: 0;
 }
 
+/* Feature card image */
 .feature-card img {
   width: 100%;
   height: 160px;
@@ -162,11 +205,13 @@ a.btn-ghost {
   display: block;
 }
 
+/* Feature card title */
 .feature-card h4 {
   margin: 12px 14px 6px;
   font-size: 16px;
 }
 
+/* Feature card description */
 .feature-card p {
   margin: 0 14px 14px 14px;
   color: var(--muted);
@@ -174,12 +219,18 @@ a.btn-ghost {
 }
 
 
+/* =========================
+   Large Screens
+   ========================= */
 @media (min-width: 1200px) {
   .split-section { margin: 48px auto; }
   .feature-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 
+/* =========================
+   Tablets
+   ========================= */
 @media (max-width: 900px) {
   .head { height: 60vh; min-height: 340px; }
   .split-section {
@@ -190,11 +241,18 @@ a.btn-ghost {
   .split-section.reverse { flex-direction: column; }
   .image-box { min-height: 220px; border-radius: 8px; }
   .text-box { padding: 22px; }
-  .feature-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; padding: 0 var(--page-padding); }
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 0 var(--page-padding);
+  }
   .feature-card img { height: 140px; }
 }
 
 
+/* =========================
+   Mobile Devices
+   ========================= */
 @media (max-width: 600px) {
   .head { height: 48vh; min-height: 260px; padding: 16px; }
   .head-inner { padding: 14px; }
@@ -204,18 +262,28 @@ a.btn-ghost {
 
   .split-section { padding: 0 12px; margin: 18px 0; }
   .text-box { padding: 18px; }
-  .feature-grid { grid-template-columns: 1fr; padding: 0 12px; gap: 12px; margin-bottom: 32px; }
+  .feature-grid {
+    grid-template-columns: 1fr;
+    padding: 0 12px;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
   .feature-card img { height: 160px; }
 
-  a.btn-primary, a.btn-ghost { padding: 9px 14px; font-size: 14px; border-radius: 7px; }
+  a.btn-primary, a.btn-ghost {
+    padding: 9px 14px;
+    font-size: 14px;
+    border-radius: 7px;
+  }
 }
 
 
+/* =========================
+   Very Small Screens
+   ========================= */
 @media (max-width: 380px) {
   .head { height: 42vh; min-height: 220px; }
   .subhead { display: none; } 
   .head h1 { font-size: 20px; }
   .text-box p { font-size: 15px; }
 }
-
-
