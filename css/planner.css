@@ -161,23 +161,36 @@ body {
 /* ================= PLANNER ================= */
 
 .planner {
-  width: 900px;
-  margin: 40px auto;
-  padding: 40px 24px;
-  border-radius: 16px;
-
+  width: 1000px;            /* increased width */
+  max-width: 95%;            /* ensures it fits on smaller screens */
+  margin: 50px auto;         /* more top/bottom space */
+  padding: 50px 36px;        /* bigger padding inside */
+  border-radius: 20px;       /* slightly more rounded */
   background: #ffffff;
   border: none;
-
   box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.12);
+    0 25px 50px rgba(0, 0, 0, 0.15);  /* stronger shadow for depth */
+  transition: transform 0.3s ease;
+}
+
+.planner:hover {
+  transform: translateY(-4px);  /* subtle lift on hover */
 }
 
 .planner h1 {
   color: red;
 }
 
-#days {
+/* Inputs: Number of Days + Max Places Per Day */
+.planner-inputs {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#days,
+#perDay {
   width: 200px;
   padding: 12px 15px;
   font-size: 18px;
@@ -185,6 +198,7 @@ body {
   border: 2px solid #26A69A;
 }
 
+/* Attraction groups */
 .group {
   margin-bottom: 30px;
 }
@@ -268,6 +282,44 @@ body {
   z-index: 1;
 }
 
+/* ================= GENERATED DAY CARDS ================= */
+
+.day {
+  margin-top: 20px;
+  padding: 18px 20px;
+  background: #fff5f7;
+  border-radius: 12px;
+  border-left: 5px solid #b30047;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.day h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #b30047;
+  font-size: 1.4rem;
+}
+
+.day ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.day ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 6px;
+}
+
+.day ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #b30047;
+  font-weight: bold;
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 900px) {
@@ -279,6 +331,11 @@ body {
 
   .custom-input {
     width: 60%;
+  }
+
+  .planner-inputs {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
@@ -295,6 +352,7 @@ body {
   }
 
   #days,
+  #perDay,
   .custom-input {
     width: 100%;
   }
