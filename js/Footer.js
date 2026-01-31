@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Footer navigation links -->
                 <h3><a href="Home.html">Home</a></h3>
                 <h3><a href="Attractions.html">Attraction</a></h3>
-                <h3><a href="TourGuide.html">Tour Guides</a></h3>
+                <h3><a href="TourGuide.html">Travel Guide</a></h3>
                 <h3><a href="Aboutus.html">About Us</a></h3>
                 <h3><a href="Planner.html">Planner</a></h3>
             </div>
