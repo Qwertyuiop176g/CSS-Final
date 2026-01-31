@@ -48,8 +48,8 @@ generateBtn.addEventListener("click", () => {
         output.innerHTML = "<p style='color:red'>Please enter a valid number of days.</p>";
         return;
     }
-    if (days > 60) {
-        output.innerHTML = "<p style='color:red'>⚠️ Maximum allowed days is 60.</p>";
+    if (days > 10) {  // Changed maximum days to 10
+        output.innerHTML = "<p style='color:red'>⚠️ Maximum allowed days is 10.</p>";
         return;
     }
 
@@ -89,7 +89,6 @@ generateBtn.addEventListener("click", () => {
         const dayAttractions = allAttractions.slice(index, index + (maxPerDay || allAttractions.length));
         index += dayAttractions.length;
 
-        // Check if attractions exist for this day
         if (dayAttractions.length > 0) {
             div.innerHTML = `
                 <h3>Day ${day}</h3>
@@ -98,7 +97,6 @@ generateBtn.addEventListener("click", () => {
                 </ul>
             `;
         } else {
-            // Free Day
             div.innerHTML = `
                 <h3>Day ${day} - Free Day</h3>
                 <ul><li>Explore Singapore at your own pace!🌴</li></ul>
@@ -109,5 +107,4 @@ generateBtn.addEventListener("click", () => {
         day++;
     }
 });
-
 
