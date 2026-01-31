@@ -1,3 +1,9 @@
+/* EmailAsk.js
+ *
+ * This script displays a modal dialog asking the user for their email address.
+ * It validates the input and provides feedback messages.
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("emailModal");
   const closeBtn = document.querySelector(".close");
@@ -15,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  /* Simple email validation function */
   function isValidEmail(value) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   }
@@ -34,7 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
       messageDiv.textContent = "Thank you! We got your email: " + email;
       messageDiv.className = "message success";
       emailInput.value = "";
-      setTimeout(() => modal.style.display = "none", 1500);
+      setTimeout(() => modal.style.display = "none", 1500); /* Close modal after a delay */
+
     }
   });
 });

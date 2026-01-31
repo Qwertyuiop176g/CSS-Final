@@ -21,7 +21,6 @@ html, body {
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height: 1.5;
-  cursor: url("../images/cursor.png"), auto;
   position: relative;
 }
 body {
@@ -39,7 +38,7 @@ main {
 
 .attraction-section {
   position: relative;
-  background-image: url('../images/attraction2.webp');
+  background-image: url('../images/attraction3.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -205,7 +204,7 @@ footer {
   }
   .text-box { padding: 22px; }
   .flexside { flex-direction: column; gap: 16px; align-items: stretch; }
-  .card img { flex: 0 0 auto; max-width: 100%; width: 100%; }
+
   .card { padding: 1.25rem 1.25rem; }
   .card-title { font-size: clamp(18px, 2.6vw, 24px); }
   .header { font-size: clamp(22px, 5.2vw, 40px); }

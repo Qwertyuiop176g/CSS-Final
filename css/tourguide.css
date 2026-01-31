@@ -1,3 +1,4 @@
+/* Basis of this webpage */
 :root{
   --page-bg: #fafafa;
   --accent: #b30047;
@@ -9,6 +10,9 @@
   --type-scale: 1;
 }
 
+#nav-container {
+    width: 100%;
+}
 
 * {
     box-sizing: border-box;
@@ -26,11 +30,27 @@ html, body {
   font-size: 16px;
 }
 
-
-#nav-container {
-    width: 100%;
+.paragraph {
+    font-size: clamp(1rem, 1.6vw, 1.05rem);
+    max-width: 900px;
+    margin-bottom: 0.9rem;
+    color: #333;
 }
 
+.text-box{
+  background-color: rgba(0,0,0,0.45);
+  padding: 36px;
+  border-radius: 12px;
+  max-width: 720px;
+  box-sizing: border-box;
+}
+
+/* Start of webpage */
+.header {
+    font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+    margin-bottom: 1rem;
+    line-height: 1.08;
+}
 
 .attraction-section {
     background-image:
@@ -38,7 +58,7 @@ html, body {
             rgba(0, 0, 0, 0.45),
             rgba(0, 0, 0, 0.45)
         ),
-        url("../images/tourguide.avif");
+        url("../images/tourguide.avif"); /* Url to image */
 
     background-size: cover;
     background-position: center;
@@ -56,7 +76,7 @@ html, body {
     overflow: hidden;
 }
 
-
+/* Background effects */
 .glitter-bg {
     position: fixed;
     top: 0;
@@ -80,38 +100,7 @@ html, body {
     }
 }
 
-
-.attraction-section p{
-    color: white;
-}
-
-.content-left {
-    max-width: 1100px;
-    margin: auto;
-    padding: 0 clamp(.75rem, 2vw, 1.5rem);
-}
-
-.header {
-    font-size: clamp(1.6rem, 3.5vw, 2.5rem);
-    margin-bottom: 1rem;
-    line-height: 1.08;
-}
-
-.paragraph {
-    font-size: clamp(1rem, 1.6vw, 1.05rem);
-    max-width: 900px;
-    margin-bottom: 0.9rem;
-    color: #333;
-}
-
-.text-box{
-  background-color: rgba(0,0,0,0.45);
-  padding: 36px;
-  border-radius: 12px;
-  max-width: 720px;
-  box-sizing: border-box;
-}
-
+/* Css for the card parts */
 .card {
     width: 100%;
     max-width: var(--max-width);
@@ -132,11 +121,15 @@ html, body {
     color: var(--accent);
 }
 
-.card-blue { background-color: #cce5ff; border-color: #003366; }
-.card-red { background-color: #ffd9d9; border-color: #cc0000; }
-.card-yellow { background-color: #fff2cc; border-color: #990000; }
-.card-green { background-color: #ccffcc; border-color: #006600; }
-.card-grey { background-color: #f2f2f2; border-color: #555555; }
+.attraction-section p{
+    color: white;
+}
+
+.content-left {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 clamp(.75rem, 2vw, 1.5rem);
+}
 
 .flexside {
     display: flex;
@@ -144,7 +137,6 @@ html, body {
     align-items: center;
     flex-wrap: nowrap;
 }
-
 
 .flexside img {
     width: 100%;
@@ -172,12 +164,6 @@ html, body {
     margin-bottom: 0.35rem;
 }
 
-a:focus, button:focus, #backToTop:focus { 
-    outline: 3px solid rgba(179,0,71,0.18); 
-    outline-offset: 3px; 
-}
-
-
 .trips-grid {
     display: flex;              
     justify-content: center;   
@@ -196,7 +182,14 @@ a:focus, button:focus, #backToTop:focus {
     flex: 1 1 250px;             
 }
 
+/* Card Colours */
+.card-blue { background-color: #cce5ff; border-color: #003366; }
+.card-red { background-color: #ffd9d9; border-color: #cc0000; }
+.card-yellow { background-color: #fff2cc; border-color: #990000; }
+.card-green { background-color: #ccffcc; border-color: #006600; }
+.card-grey { background-color: #f2f2f2; border-color: #555555; }
 
+/* Specifically for the last card only */
 .card-grey .card-content {
     display: flex;
     flex-direction: column;
@@ -244,11 +237,12 @@ a:focus, button:focus, #backToTop:focus {
 
 a:focus, button:focus, #backToTop:focus { outline: 3px solid rgba(179,0,71,0.18); outline-offset: 3px; }
 
+/* Mobile Responsive Section */
+
 @media (max-width: 1500px) {
   .flexside img { width: 48%; }
   .card-content { width: 52%; }
 }
-
 
 @media (max-width: 1000px) {
     .attraction-section { padding: clamp(2rem, 6vw, 4rem) 0; }
@@ -273,8 +267,6 @@ a:focus, button:focus, #backToTop:focus { outline: 3px solid rgba(179,0,71,0.18)
     }
 }
 
-
-
 @media (max-width: 800px) {
     .header { font-size: clamp(1.25rem, 5.6vw, 1.8rem); }
     .paragraph, .card-content { font-size: 1.02rem; }
@@ -282,7 +274,6 @@ a:focus, button:focus, #backToTop:focus { outline: 3px solid rgba(179,0,71,0.18)
     .glitter-bg { background-size: 28px 28px, 100% 100%; }
     #backToTop { padding: 12px; font-size: 16px; bottom: 18px; right: 18px; }
 }
-
 
 @media (max-width: 380px) {
     .header { font-size: 1.6rem; }

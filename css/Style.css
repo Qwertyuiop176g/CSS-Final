@@ -53,15 +53,27 @@ nav > a:hover {
 
 
 
-
-
+/* Custom cursor styles */
 html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial !important;
-    line-height: 1.5;
-    cursor: url("../images/cursor.png"), auto;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial !important;
+  line-height: 1.5;
+  cursor: url("../images/cursor.png"), auto;
 }
+
+/* Disable custom cursor */
+html.no-custom-cursor,
+html.no-custom-cursor body,
+html.no-custom-cursor * {
+  cursor: auto !important;
+}
+
+html.no-custom-cursor .custom-cursor {
+  display: none !important;
+}
+
+
 
 a, button {
   cursor: pointer;
