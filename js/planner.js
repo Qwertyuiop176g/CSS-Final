@@ -1,26 +1,23 @@
-/* ================== VARIABLES ================== */
+// ====== SELECTORS ======
 const attractions = document.querySelectorAll(".attraction");
 const generateBtn = document.getElementById("generate");
 const output = document.getElementById("output");
-const daysInput = document.getElementById("days");
-const perDayInput = document.getElementById("perDay"); // user-controlled daily max
 
-/* ================== TOGGLE SELECTION ================== */
+// ====== TOGGLE SELECTION ======
 function attachToggle(button) {
     button.addEventListener("click", () => {
         button.classList.toggle("selected");
     });
 }
 
-// Attach toggle to all existing buttons
 attractions.forEach(btn => attachToggle(btn));
 
-/* ================== CUSTOM INPUT HANDLING ================== */
+// ====== CUSTOM INPUT HANDLING ======
 document.querySelectorAll(".custom-input").forEach(input => {
     input.addEventListener("keypress", e => {
         if (e.key === "Enter") {
             const value = input.value.trim();
-            if (!value || value.length < 3) return; // simple validation
+            if (!value) return;
 
             const group = input.closest(".group");
             const area = group.dataset.area;
@@ -28,11 +25,9 @@ document.querySelectorAll(".custom-input").forEach(input => {
             const newBtn = document.createElement("button");
             newBtn.className = "attraction selected";
             newBtn.dataset.area = area;
-            newBtn.textContent = value.charAt(0).toUpperCase() + value.slice(1);
+            newBtn.textContent = value;
 
             attachToggle(newBtn);
-
-            // Insert the new button before the input
             group.insertBefore(newBtn, input);
 
             input.value = "";
@@ -40,75 +35,79 @@ document.querySelectorAll(".custom-input").forEach(input => {
     });
 });
 
-/* ================== ITINERARY GENERATION ================== */
+// ====== GENERATE ITINERARY ======
 generateBtn.addEventListener("click", () => {
-    const days = parseInt(daysInput.value);
-    const maxPerDay = parseInt(perDayInput.value) || 4;
-    const selected = [...document.querySelectorAll(".attraction.selected")];
+    output.innerHTML = "";
 
-    // Validation: at least one attraction and days > 0
-    if (!days || selected.length === 0) {
-        output.innerHTML = `
-            <p style="color:#b30047; font-weight:600;">
-                Please select the number of days and at least one attraction.
-            </p>
-        `;
+    let days = parseInt(document.getElementById("days").value);
+    const maxPerDayInput = document.getElementById("perDay");
+    const maxPerDay = parseInt(maxPerDayInput?.value) || 0;
+
+    // Validate days
+    if (!days || days < 1) {
+        output.innerHTML = "<p style='color:red'>Please enter a valid number of days.</p>";
+        return;
+    }
+    if (days > 60) {
+        output.innerHTML = "<p style='color:red'>⚠️ Maximum allowed days is 60.</p>";
         return;
     }
 
-    // Check if enough days to fit all attractions
-    const requiredDays = Math.ceil(selected.length / maxPerDay);
-    if (requiredDays > days) {
-        output.innerHTML = `
-            <p style="color:#b30047; font-weight:600;">
-                You have selected ${selected.length} attractions but only ${days} day(s) 
-                with a maximum of ${maxPerDay} per day. <br>
-                You need at least ${requiredDays} day(s) to fit them all.
-            </p>
-        `;
-        return; // stop generation
+    const selected = [...document.querySelectorAll(".attraction.selected")];
+    if (selected.length === 0) {
+        output.innerHTML = "<p style='color:red'>Please select at least one attraction.</p>";
+        return;
     }
 
-    // Shuffle attractions for variety
-    const shuffled = selected
-        .map(btn => btn.textContent)
-        .sort(() => Math.random() - 0.5);
-
-    // Initialize empty plan array
-    const plan = Array.from({ length: days }, () => []);
-
-    // Distribute attractions across days respecting user max
-    shuffled.forEach(attraction => {
-        const targetDay = plan.find(day => day.length < maxPerDay);
-        if (targetDay) targetDay.push(attraction);
+    // Flatten attractions
+    const grouped = {};
+    selected.forEach(btn => {
+        const area = btn.dataset.area;
+        if (!grouped[area]) grouped[area] = [];
+        grouped[area].push(btn.textContent);
     });
+    const allAttractions = Object.values(grouped).flat();
 
-    // Clear previous output
-    output.innerHTML = "";
+    // Warn if not enough days
+    const totalSlots = maxPerDay > 0 ? days * maxPerDay : selected.length;
+    if (selected.length > totalSlots) {
+        const remaining = selected.length - totalSlots;
+        const warn = document.createElement("p");
+        warn.style.color = "red";
+        warn.textContent = `⚠️ Not enough days to fit all selected attractions with ${maxPerDay} per day. ${remaining} attraction(s) won't fit.`;
+        output.prepend(warn);
+    }
 
-    // Build day cards
-    plan.forEach((items, index) => {
-        const dayDiv = document.createElement("div");
-        dayDiv.className = "day";
+    // Generate day cards
+    let day = 1;
+    let index = 0;
 
-        if (items.length === 0) {
-            dayDiv.innerHTML = `
-                <h3>Day ${index + 1}</h3>
-                <p>Free day – explore nearby areas or relax 🌴</p>
+    while (day <= days && day <= 10) {
+        const div = document.createElement("div");
+        div.className = "day";
+
+        const dayAttractions = allAttractions.slice(index, index + (maxPerDay || allAttractions.length));
+        index += dayAttractions.length;
+
+        // Check if attractions exist for this day
+        if (dayAttractions.length > 0) {
+            div.innerHTML = `
+                <h3>Day ${day}</h3>
+                <ul>
+                    ${dayAttractions.map(a => `<li>${a}</li>`).join("")}
+                </ul>
             `;
         } else {
-            dayDiv.innerHTML = `
-                <h3>Day ${index + 1}</h3>
-                <ul>
-                    ${items.map(a => `<li>${a}</li>`).join("")}
-                </ul>
+            // Free Day
+            div.innerHTML = `
+                <h3>Day ${day} - Free Day</h3>
+                <ul><li>Explore Singapore at your own pace!🌴</li></ul>
             `;
         }
 
-        output.appendChild(dayDiv);
-    });
-
-    // Scroll to results smoothly
-    output.scrollIntoView({ behavior: "smooth" });
+        output.appendChild(div);
+        day++;
+    }
 });
+
 
