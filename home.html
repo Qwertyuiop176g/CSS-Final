@@ -1,21 +1,40 @@
 <!DOCTYPE html>
+<!-- Defines the document type and ensures HTML5 standards -->
 <html lang="en">
   <head>
+    <!-- Character encoding -->
     <meta charset="utf-8" />
+
+    <!-- Makes the website responsive on different screen sizes -->
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <!-- Page title shown in browser tab -->
     <title>Home</title>
+
+    <!-- Google Font: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Global stylesheet -->
     <link rel="stylesheet" href="css/Style.css">
+
+    <!-- Home page specific stylesheet -->
     <link rel="stylesheet" href="css/Home.css">
   </head>
 
   <body>
+    <!-- Navigation bar container (loaded dynamically using JavaScript) -->
     <div id="nav-container" role="navigation" aria-label="Main navigation"></div>
 
+    <!-- Hero / banner section at the top of the page -->
     <header class="head" role="banner">
       <div class="head-inner">
+        <!-- Main heading of the website -->
         <h1>Singapore Attractions</h1>
+
+        <!-- Short tagline below the heading -->
         <p class="subhead">Explore iconic attractions, culture, and rich experiences.</p>
+
+        <!-- Call-to-action buttons -->
         <div class="hero-actions">
           <a class="btn-primary" href="attractions.html">Explore Attractions</a>
           <a class="btn-ghost" href="#main">Top Picks</a>
@@ -23,73 +42,57 @@
       </div>
     </header>
 
+    <!-- Main content of the page -->
     <main id="main" role="main">
+
+      <!-- Introduction section welcoming users to Singapore -->
       <section class="intro split-section" aria-labelledby="welcome-title">
         <div class="text-box" id="welcome">
           <h2 id="welcome-title">Welcome to Singapore</h2>
           <br>
+
+          <!-- Introductory paragraph -->
           <p>
             Singapore is a vibrant island city-state known for its stunning modern architecture, diverse culture, and incredible attractions. From Marina Bay Sands to Gardens by the Bay, there's something for everyone to enjoy.
           </p>
+
+          <!-- Purpose of the website -->
           <p>
             This website will help you discover the best places to visit in Singapore, including theme parks, cultural landmarks, nature spots, and more.
           </p>
         </div>
 
+        <!-- Image related to the welcome section -->
         <div class="image-box" aria-hidden="false">
           <img src="images/mbs.jpg" alt="Marina Bay Sands at dusk" />
         </div>
       </section>
 
+      <!-- Section highlighting top attractions -->
       <section id="top-attractions" class="split-section reverse">
+        <!-- Image showcasing Gardens by the Bay -->
         <div class="image-box">
           <img src="images/mbs_garden.jpg" alt="Gardens by the Bay - Supertrees" />
         </div>
 
+        <!-- Text content describing popular attractions -->
         <div class="text-box">
           <h2>Top Attractions Await You</h2>
           <br>
+
           <p>
             Discover famous spots like Marina Bay Sands with its rooftop pool, Gardens by the Bay with giant Supertrees, fun-filled Sentosa Island, and the iconic Merlion statue. Singapore offers a perfect mix of nature, culture, and entertainment.
           </p>
+
           <p>
             Use the Explore button above to see the full list of attractions, or jump straight to our curated guides for families, couples, and solo travelers.
           </p>
         </div>
       </section>
 
+      <!-- Grid showing preview cards of popular attractions -->
       <section class="feature-grid" aria-label="Preview of attractions">
+
+        <!-- Merlion Park card linking to detailed section on Attractions page -->
         <a href="Attractions.html#merlion-card">
-          <article class="feature-card">
-            <img src="images/merlion.jpg" alt="Merlion statue" />
-            <h4>Merlion Park</h4>
-            <p>Iconic waterfront statue and a great photo spot for sunset views.</p>
-          </article>
-        </a>
-        
-        <a href="Attractions.html#sentosa-card">
-          <article class="feature-card">
-            <img src="images/sentosa.jpg" alt="Sentosa Island beach" />
-            <h4>Sentosa Island</h4>
-            <p>Beaches, Universal Studios, and family activities — perfect for a full-day visit.</p>
-          </article>
-        </a>
-
-        <a href="Attractions.html#chinatown-card">
-          <article class="feature-card">
-            <img src="images/chinatown.jpg" alt="Chinatown street and shophouses" />
-            <h4>Chinatown</h4>
-            <p>Colorful streets, food markets and historic temples — great for exploring.</p>
-          </article>
-        </a>
-      </section>
-    </main>
-
-    <button id="back-to-top" title="Go to top">↑ Top</button>  
-    <div id="footer-container"  aria-label="Footer"></div>
-
-    <script src="js/Nav.js"></script>
-    <script src="js/Footer.js"></script>
-    <script src="js/Base.js" defer></script>
-  </body>
-</html>
+          <article class="
