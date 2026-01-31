@@ -75,6 +75,27 @@ body {
     color: rgb(255, 0, 0);
 }
 
+/* DESKTOP NAV LINKS */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    display: block;
+    color: #ffffff;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #ddd;
+    color: rgb(255, 0, 0);
+}
+
+
 /* Logo in nav */
 #nav-container nav a.logo img {
     height: 80px;
@@ -239,5 +260,6 @@ button {
         display: flex;
     }
 }
+
 
 
