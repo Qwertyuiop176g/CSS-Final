@@ -219,7 +219,7 @@ main {
 }
 
 /* Medium screens */
-@media (max-width: 1058px) {
+@media (max-width: 900px) {
   .attraction-section {
     height: 420px;
     padding: 32px;
@@ -233,7 +233,7 @@ main {
 }
 
 /* Small screens */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .attraction-section { height: 300px; padding: 20px; }
   .text-box { padding: 14px; }
   .header { font-size: 26px; }
